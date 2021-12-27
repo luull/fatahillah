@@ -16,14 +16,15 @@ class configurationController extends Controller
         return view('templates.admin.configuration', compact('data'));
     }
     public function update(Request $request){
+            $request->validate([
+                'logo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ]);
             $logo = '';
             if ($request->hasfile('logo')) {
-                $request->validate([
-                    'logo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-                ]);
                 $logoName = time().'.'.$request->logo->extension();
-                $request->logo->move(public_path('images'), $logoName);
-                $logo = "/images/$logoName";
+                $request->logo->move(public_path('logo'), $logoName);
+                $logo = "/logo/$logoName";
+
             }else {
                 $logo = $request->default;
             }
@@ -39,7 +40,8 @@ class configurationController extends Controller
                 'logo' => $logo,
             ]);
             if($hsl){
-                session(['config' => $hsl]);
+                $get = Configuration::where('id', $request->id)->first();
+                session(['config' => $get]);
                 return redirect()->back()->with(['message' => 'Data has been updated', 'color' => 'alert-success']);
             }else{
                 return redirect()->back()->with(['message' => 'Data has been updated', 'color' => 'alert-danger']);

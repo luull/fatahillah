@@ -36,7 +36,7 @@
                         @else
                         <span class="text-danger">* max size 2mb</span>
                         <hr>
-                        <img src="{{ asset('templates/admin/assets/img/90x90.jpg')}}" class="img-fluid" alt="">
+                        <img src="{{ asset('default-image.png')}}" class="img-fluid" alt="">
                         <input type="file" class="form-control" name="logo">
                         @error('logo')
                         <br>

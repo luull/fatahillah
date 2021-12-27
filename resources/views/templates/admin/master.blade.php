@@ -48,6 +48,7 @@
     <script src="{{ asset('templates/admin/bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="{{ asset('templates/admin/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
     <script src="{{ asset('templates/admin/assets/js/app.js')}}"></script>
+    <script src="{{ asset('templates/admin/ckeditor/ckeditor.js')}}"></script>
     <script>
         $(document).ready(function() {
             App.init();
@@ -60,8 +61,8 @@
     <script type="text/javascript">
         feather.replace();
     </script>
-        <script src="{{ asset('templates/admin/plugins/table/datatable/datatables.js')}}"></script>
-        <script>
+    <script src="{{ asset('templates/admin/plugins/table/datatable/datatables.js')}}"></script>
+    <script>
             $('#dt-table').DataTable({
                 "dom": "<'dt--top-section'<'row'<'col-12 col-sm-6 d-flex justify-content-sm-start justify-content-center'l><'col-12 col-sm-6 d-flex justify-content-sm-end justify-content-center mt-sm-0 mt-3'f>>>" +
             "<'table-responsive'tr>" +
@@ -77,6 +78,8 @@
                 "lengthMenu": [7, 10, 20, 50],
                 "pageLength": 7
             });
-        </script>
+    </script>
+    @yield('script')
+
 </body>
 </html>

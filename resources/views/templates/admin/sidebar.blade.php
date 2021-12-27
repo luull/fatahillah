@@ -4,7 +4,7 @@
 
         <div class="theme-logo">
             <a href="/dashboard">
-                <img src="{{ asset('templates/admin/assets/img/90x90.jpg')}}" class="navbar-logo" alt="logo">
+                <img src="{{ asset(session('config')->logo)}}" class="navbar-logo" alt="logo">
             </a>
         </div>
 
@@ -18,6 +18,16 @@
                     </div>
                 </a>
                 <div class="tooltip"><span>Dashboard</span></div>
+            </li>
+            <li class="menu menu-single {{ Request::is('about') ? 'active' : '' }}">
+                <a href="/about" data-active="{{ Request::is('about') ? 'true' : '' }}" class="menu-toggle">
+                    <div class="base-menu">
+                        <div class="base-icons">
+                            <i data-feather="clipboard"></i>
+                        </div>
+                    </div>
+                </a>
+                <div class="tooltip"><span>About</span></div>
             </li>
             <li class="menu menu-single {{ Request::is('configuration') ? 'active' : '' }}">
                 <a href="/configuration" data-active="{{ Request::is('configuration') ? 'true' : '' }}" class="menu-toggle">
@@ -35,13 +45,13 @@
 
             <div class="dropdown user-profile-dropdown">
                 <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img src="{{ asset('templates/admin/assets/img/90x90.jpg')}}" class="img-fluid" alt="avatar">
+                    <img src="{{ asset('default-user.jpeg')}}"class="img-fluid" alt="avatar">
                 </a>
                 <div class="dropdown-menu position-absolute" aria-labelledby="userProfileDropdown">
                     <div class="dropdown-inner">
                         <div class="user-profile-section">
                             <div class="media mx-auto">
-                                <img src="{{ asset('templates/admin/assets/img/90x90.jpg')}}" class="img-fluid mr-2" alt="avatar">
+                                <img src="{{ asset('default-user.jpeg')}}"class="img-fluid mr-2" alt="avatar">
                                 <div class="media-body">
                                     <h5>{{ session('admin_data')->username }}</h5>
                                 </div>

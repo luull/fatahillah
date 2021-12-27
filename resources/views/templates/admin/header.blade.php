@@ -2,10 +2,8 @@
     <header class="header navbar navbar-expand-sm">
         <ul class="navbar-item flex-row">
             <li class="nav-item align-self-center page-heading">
-                <div class="page-header">
-                    <div class="page-title">
-                        {{-- <h3>{{ session('config')->name }}</h3> --}}
-                    </div>
+                <div class="page-titles">
+                    <h5>{{ session('config')->name }}</h5>
                 </div>
             </li>
         </ul>
