@@ -31,7 +31,7 @@
                         <input type="text" value="{{$data->logo}}" name="default" hidden>
                         @error('logo')
                         <br>
-                        <div class="text-danger mt-1">Logo Tidak sesuai dengan ketentuan</div>
+                        <div class="text-danger mt-1">The Image does not match the Requirements</div>
                         @enderror
                         @else
                         <span class="text-danger">* max size 2mb</span>
@@ -40,7 +40,7 @@
                         <input type="file" class="form-control" name="logo">
                         @error('logo')
                         <br>
-                        <div class="text-danger mt-1">Logo Tidak sesuai dengan ketentuan</div>
+                        <div class="text-danger mt-1">The Image does not match the Requirements</div>
                         @enderror
                         @endif
                     </div>

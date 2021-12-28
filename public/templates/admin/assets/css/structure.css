@@ -749,14 +749,14 @@ code {
   transform-origin: left bottom;
   top: auto !important;
   min-width: 200px;
-  background: #1b2e4b;
+  background: #99680e;
   box-shadow: 0 10px 60px 0 rgba(0, 0, 0, 0.15);
   -webkit-overflow-scrolling: touch;
   padding: 0;
   -webkit-transform: scale(0) !important;
   transform: scale(0) !important;
   transition: transform .2s,opacity .2s,-webkit-transform .2s;
-  border: 1px solid #1b2e4b; }
+  border: 1px solid #99680e; }
   .sidebar-wrapper #compactSidebar .user-profile-dropdown .dropdown-menu.show {
     opacity: 1;
     -webkit-transform: scale(1) !important;
@@ -782,7 +782,7 @@ code {
           font-size: 14px;
           font-weight: 500;
           margin-bottom: 0;
-          color: #61b6cd; }
+          color: #ffffff; }
         .sidebar-wrapper #compactSidebar .user-profile-dropdown .dropdown-menu .user-profile-section .media .media-body p {
           font-size: 11px;
           font-weight: 500;
