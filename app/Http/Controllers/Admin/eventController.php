@@ -86,8 +86,10 @@ class eventController extends Controller
     }
     public function delete(Request $request)
     {
-        $hsl = Event::find($request->id)->delete();
+        $get = Event::where('id', $request->id)->first();
+        $hsl = unlink(public_path($get->image));
         if($hsl){
+            Event::find($request->id)->delete();
             return redirect()->back()->with(['message' => 'Event has been deleted', 'color' => 'alert-success']);
         }else{
             return redirect()->back()->with(['message' => 'Event failed deleted', 'color' => 'alert-danger']);

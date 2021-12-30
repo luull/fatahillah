@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Banner;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class bannerController extends Controller
 {
@@ -79,8 +80,10 @@ class bannerController extends Controller
     }
     public function delete(Request $request)
     {
-        $hsl = Banner::find($request->id)->delete();
+        $get = Banner::where('id', $request->id)->first();
+        $hsl = unlink(public_path($get->image));
         if($hsl){
+            Banner::find($request->id)->delete();
             return redirect()->back()->with(['message' => 'banner has been deleted', 'color' => 'alert-success']);
         }else{
             return redirect()->back()->with(['message' => 'banner failed deleted', 'color' => 'alert-danger']);

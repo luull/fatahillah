@@ -78,8 +78,10 @@ class newsController extends Controller
     }
     public function delete(Request $request)
     {
-        $hsl = News::find($request->id)->delete();
+        $get = News::where('id', $request->id)->first();
+        $hsl = unlink(public_path($get->image));
         if($hsl){
+            News::find($request->id)->delete();
             return redirect()->back()->with(['message' => 'news has been deleted', 'color' => 'alert-success']);
         }else{
             return redirect()->back()->with(['message' => 'news failed deleted', 'color' => 'alert-danger']);

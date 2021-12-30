@@ -76,8 +76,10 @@ class photoController extends Controller
     }
     public function delete(Request $request)
     {
-        $hsl = Photo::find($request->id)->delete();
+        $get = Photo::where('id', $request->id)->first();
+        $hsl = unlink(public_path($get->image));
         if($hsl){
+            Photo::find($request->id)->delete();
             return redirect()->back()->with(['message' => 'photo has been deleted', 'color' => 'alert-success']);
         }else{
             return redirect()->back()->with(['message' => 'photo failed deleted', 'color' => 'alert-danger']);

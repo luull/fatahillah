@@ -67,3 +67,9 @@ Route::post('/admin/updateuser', 'Admin\userController@update')->name('update-us
 
 Route::get('/admin/changepass', 'Auth\loginController@changepass');
 Route::post('/admin/changepass', 'Auth\loginController@proseschange')->name('change-password');
+
+
+// WEBFRONT ROUTE
+
+Route::get('/', 'Webfront\homeController@index');
+

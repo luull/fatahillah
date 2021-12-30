@@ -29,6 +29,7 @@ class aboutController extends Controller
             $image = $request->default;
         }
         $hsl = About::find($request->id)->update([
+            'title' => $request->title,
             'body' => $request->body,
             'vission' => $request->vission,
             'mission' => $request->mission,

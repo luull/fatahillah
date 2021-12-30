@@ -47,6 +47,10 @@
                     <div class="col-md-8">
                         <hr class="mt-5">
                         <div class="form-group">
+                            <label>Title</label>
+                            <input type="text" class="form-control" name="title" value="{{$data->title}}">
+                        </div>
+                        <div class="form-group">
                             <label>Body</label>
                             <textarea id="body" class="form-control" name="body" rows="10" cols="50">{!! $data->body !!}</textarea>
                         </div>
