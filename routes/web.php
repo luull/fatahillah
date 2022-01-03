@@ -55,7 +55,8 @@ Route::post('/admin/updatephoto', 'Admin\photoController@update')->name('update-
 
 Route::get('/admin/video', 'Admin\videoController@index');
 Route::post('/admin/createvideo', 'Admin\videoController@create')->name('create-video');
-Route::get('/admin/video/delete/{id}', 'Admin\videoController@delete')->name('delete-video');
+Route::get('/admin/video/delete/{id}', 'Admin
+\videoController@delete')->name('delete-video');
 Route::get('/admin/video/find/{id}', 'Admin\videoController@find');
 Route::post('/admin/updatevideo', 'Admin\videoController@update')->name('update-video');
 
@@ -72,4 +73,12 @@ Route::post('/admin/changepass', 'Auth\loginController@proseschange')->name('cha
 // WEBFRONT ROUTE
 
 Route::get('/', 'Webfront\homeController@index');
+Route::get('/about', 'Webfront\aboutController@index');
+Route::get('/viewnews', 'Webfront\newsController@index');
+Route::get('/viewphoto', 'Webfront\photoController@index');
+Route::get('/viewvideo', 'Webfront\videoController@index');
+Route::get('/viewevent', 'Webfront\eventController@index');
+
+Route::get('/detailnews/{id}', 'Webfront\newsController@detail');
+Route::get('/detailevent/{id}', 'Webfront\eventController@detail');
 

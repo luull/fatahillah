@@ -42,6 +42,7 @@
     </div>
     @include('templates.webfront.header')
     @yield('content')
+    @include('templates.webfront.footer')
     <!-- JavaScript -->
 <script src="{{ asset('templates/webfront/vendor/js/bundle.min.js')}}"></script>
 <!-- Plugin Js -->
@@ -68,6 +69,6 @@
 <!-- FUNCTION Script -->
 <script src="{{ asset('templates/webfront/vendor/js/contact_us.js')}}"></script>
 <script src="{{ asset('templates/webfront/js/script.js')}}"></script>
-
+@yield('script')
 </body>
 </html>

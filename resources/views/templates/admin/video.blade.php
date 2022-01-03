@@ -72,9 +72,12 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Link</label>
-                                <input type="text" class="form-control" name="link">
+                        <label for="basic-url">Link Youtube</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon3">https://www.youtube.com/watch?v=</span>
+                                </div>
+                                <input type="text" class="form-control" id="basic-url" name="link" aria-describedby="basic-addon3">
                             </div>
                         </div>
                     </div>
@@ -109,9 +112,12 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Link</label>
-                                <input type="text" id="edit_link" class="form-control" name="link">
+                            <label for="basic-url">Link Youtube</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon3">https://www.youtube.com/watch?v=</span>
+                                </div>
+                                <input type="text" class="form-control" id="edit_link" name="link" aria-describedby="basic-addon3">
                             </div>
                         </div>
 

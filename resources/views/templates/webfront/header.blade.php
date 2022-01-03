@@ -25,29 +25,29 @@
                     <nav class="navbar navbar-expand-md  static-nav">
                         <div class="container position-relative megamenu-custom">
                             <a class="navbar-brand center-brand" href="index-corporate-executive.html">
-                                <img src="{{ asset(session('logo'))}}" alt="logo" class="logo-scrolled">
+                                <img src="{{ asset(session('config')->logo)}}" alt="logo" class="logo-scrolled">
                             </a>
                             <div class="collapse navbar-collapse">
                                 <ul class="navbar-nav ml-auto mr-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="index-corporate-executive.html">HOME</a>
+                                        <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">HOME</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="index-corporate-executive.html">ABOUT US</a>
+                                        <a class="nav-link {{ Request::is('about') ? 'active' : '' }}"  href="/about">ABOUT US</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="index-corporate-executive.html">AGENDA</a>
+                                        <a class="nav-link {{ Request::is('viewevent') ? 'active' : '' }}"  href="/viewevent">EVENT</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="index-corporate-executive.html">BERITA</a>
+                                        <a class="nav-link {{ Request::is('viewnews') ? 'active' : '' }}"  href="/viewnews">NEWS</a>
                                     </li>
 
                                     <li class="nav-item dropdown position-relative">
                                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">GALLERY</a>
                                         <div class="dropdown-menu">
                                             <ul>
-                                                <li><i class="lni-angle-double-right right-arrow"></i><a class="dropdown-item" href="corporate-executive/standard-blog.html">PHOTO</a></li>
-                                                <li><i class="lni-angle-double-right right-arrow"></i><a class="dropdown-item" href="corporate-executive/detail-blog.html">VIDEO</a></li>
+                                                <li><i class="lni-angle-double-right right-arrow"></i><a class="dropdown-item {{ Request::is('viewphoto') ? 'active' : '' }}" href="/viewphoto">PHOTO</a></li>
+                                                <li><i class="lni-angle-double-right right-arrow"></i><a class="dropdown-item {{ Request::is('viewvideo') ? 'active' : '' }}" href="/viewvideo">VIDEO</a></li>
                                             </ul>
                                         </div>
                                     </li>
@@ -73,56 +73,31 @@
                                 <ul class="navbar-nav">
 
                                     <li class="nav-item">
-                                        <a class="nav-link scroll" href="index-corporate-executive.html"> Home</a>
+                                        <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">HOME</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link collapsePagesSideMenu" data-toggle="collapse" href="#sideNavPages1">
-                                            Features <i class="fas fa-chevron-down"></i>
-                                        </a>
-                                        <div id="sideNavPages1" class="collapse sideNavPages">
-
-                                            <h5 class="sub-title">1. Features</h5>
-                                            <ul class="navbar-nav mt-2">
-                                                <li class="nav-item"><a class="nav-link" href="#our-support">Our Support</a></li>
-                                                <li class="nav-item"><a class="nav-link" href="#facts">Our Stats</a></li>
-                                                <li class="nav-item" ><a class="nav-link" href="#testimonial-sec">Testimonial</a></li>
-                                            </ul>
-
-                                            <h5 class="sub-title">2. Others</h5>
-                                            <ul class="navbar-nav mt-2">
-                                                <li class="nav-item"><a class="nav-link scroll" href="#services-section">Services</a></li>
-                                                <li class="nav-item"><a class="nav-link scroll" href="#portfolio-section">Portfolio</a></li>
-                                                <li class="nav-item" ><a class="nav-link scroll" href="#pricing-sec">Pricing</a></li>
-                                            </ul>
-
-                                            <h5 class="sub-title">3. Sections</h5>
-                                            <ul class="navbar-nav mt-2">
-                                                <li class="nav-item"><a class="nav-link scroll" href="#speaker-sec">Team</a></li>
-                                                <li class="nav-item"><a class="nav-link scroll" href="#testimonial-sec">Reviews</a></li>
-                                                <li class="nav-item" ><a class="nav-link" href="#our-support">Support</a></li>
-                                            </ul>
-
-                                        </div>
+                                        <a class="nav-link {{ Request::is('about') ? 'active' : '' }}" href="/about">ABOUT US</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link collapsePagesSideMenu" data-toggle="collapse" href="#sideNavPages3">
-                                            Blog <i class="fas fa-chevron-down"></i>
-                                        </a>
-                                        <div id="sideNavPages3" class="collapse sideNavPages">
-                                            <ul class="navbar-nav mt-2">
-                                                <li class="nav-item"><a class="nav-link" href="corporate-executive/standard-blog.html">Blog Layout 1</a></li>
-                                                <li class="nav-item"><a class="nav-link" href="corporate-executive/detail-blog.html">Blog Layout 2</a></li>
+                                        <a class="nav-link {{ Request::is('events') ? 'active' : '' }}"  href="/events">EVENT</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link {{ Request::is('news') ? 'active' : '' }}"  href="/viewnews">NEWS</a>
+                                    </li>
+
+
+                                    <li class="nav-item dropdown position-relative">
+                                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">GALLERY</a>
+                                        <div class="dropdown-menu">
+                                            <ul>
+                                                <li><i class="lni-angle-double-right right-arrow"></i><a class="dropdown-item {{ Request::is('viewphoto') ? 'active' : '' }}" href="/viewphoto">PHOTO</a></li>
+                                                <li><i class="lni-angle-double-right right-arrow"></i><a class="dropdown-item {{ Request::is('viewvideo') ? 'active' : '' }}" href="/viewvideo">VIDEO</a></li>
                                             </ul>
                                         </div>
                                     </li>
+
                                     <li class="nav-item">
-                                        <a class="nav-link scroll" href="#services-section">Service</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link scroll" href="#portfolio-section">Portfolio</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#map">Contact</a>
+                                        <a class="nav-link" href="#contact-sec">CONTACT </a>
                                     </li>
                                 </ul>
                             </nav>
@@ -143,3 +118,4 @@
         </div>
     </div>
 </div>
+
