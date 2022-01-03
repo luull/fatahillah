@@ -74,7 +74,7 @@
                          data-paddingbottom="[0,0,0,0]"
                          data-paddingleft="[0,0,0,0]"
 
-                         style="z-index: 11; max-width:960px; white-space: nowrap; font-size: 12px; line-height: 22px; font-weight: 600; color: #ffffff; letter-spacing: 0px;font-family:Poppins;"><a href="#our-support" class="btn blue-and-white-slider slider-btn"> READ MORE</a>
+                         style="z-index: 11; max-width:960px; white-space: nowrap; font-size: 12px; line-height: 22px; font-weight: 600; color: #ffffff; letter-spacing: 0px;font-family:Poppins;"><a href="#about" class="btn blue-and-white-slider slider-btn"> READ MORE</a>
                     </div>
 
                 </li>
@@ -84,7 +84,7 @@
             <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div></div>
     </div><!-- END REVOLUTION SLIDER -->
 </div>
-<div class="service-section" id="services-section" style="background-color: #fafafa !important;">
+<div class="service-section" id="about" style="background-color: #fafafa !important;">
     <div class="container">
         <div class="row">
             <div class="col-12 heading text-center">
@@ -96,7 +96,7 @@
         </div>
     </div>
 </div>
-<div class="service-section" id="services-section">
+<div class="service-section" id="news">
     <div class="blog-body">
         <div class="container blog-container">
             <div class="row justify-content-center">
@@ -140,7 +140,7 @@
         </div>
     </div>
 </div>
-<div class="service-section" id="services-section" style="background-color: #fafafa !important;">
+<div class="service-section" id="event" style="background-color: #fafafa !important;">
         <div class="container blog-container">
             <div class="row justify-content-center">
                 <div class="col-12 mb-4 heading text-center">
@@ -179,7 +179,7 @@
 </div>
 
  </div>
-<div class="portfolio-section" id="portfolio-section">
+<div class="portfolio-section mb-5" id="photo">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
@@ -188,7 +188,7 @@
             </div>
         </div>
     </div>
-   <div class="container mt-4">
+   <div class="container mt-4 mb-5">
     <div id="js-grid-mosaic-flat" class="cbp cbp-l-grid-mosaic-flat">
         @foreach ($photo as $p )
         <div class="cbp-item ">
@@ -210,7 +210,7 @@
     </div>
    </div>
 </div>
-<div class="portfolio-section" id="portfolio-section">
+<div class="portfolio-section" id="video" style="background-color: #fafafa !important;">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">

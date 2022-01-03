@@ -30,7 +30,7 @@
                                     <span class="card-media-body-supporting-bottom-text subtle u-float-right">{{$e->created_by}}</span>
                                 </div>
                                 <div class="card-media-body-supporting-bottom card-media-body-supporting-bottom-reveal">
-                                    <a href="#/" class="card-media-body-supporting-bottom-text card-media-link u-float-right">VIEW DETAIL</a>
+                                    <a href="/detailevent/{{$e->id}}"class="card-media-body-supporting-bottom-text card-media-link u-float-right">VIEW DETAIL</a>
                                 </div>
                             </div>
                         </div>

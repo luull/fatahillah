@@ -35,7 +35,7 @@
 
                                 <p>{!! Str::limit($n->body, 200,'...') !!}</p>
 
-                                <a class="btn green-and-blue" href="javascript:void(0)">Read More</a>
+                                <a class="btn green-and-blue" href="/detailnews/{{$n->id}}">Read More</a>
 
                             </div>
                         </article>
