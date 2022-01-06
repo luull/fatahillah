@@ -505,7 +505,7 @@ section {
 }
 
 .section-bg {
-  background-color: #f6f9fe;
+  background-color: #fffaf5;
 }
 
 .section-title {
@@ -518,7 +518,7 @@ section {
   font-weight: 700;
   padding: 8px 20px;
   margin: 0;
-  background: #e7f1fd;
+  background: #faefe4;
   color: #f08c25;
   display: inline-block;
   text-transform: uppercase;

@@ -96,7 +96,7 @@
     </div>
   </section>
   @endforeach
-  <section id="about" class="about section-bg">
+  <section id="about" class="about">
     <div class="container" data-aos="fade-up">
 
       <div class="section-title">
@@ -159,7 +159,7 @@
     </div>
   </section>
 
-<div class="service-section" id="event" style="background-color: #fafafa !important;">
+<div class="service-section pt-5 pb-5" id="event">
         <div class="container blog-container">
             <div class="row justify-content-center">
                 <div class="section-title">
@@ -200,7 +200,7 @@
 </div>
 
  </div>
- <section id="portfolio" class="portfolio">
+ <section id="portfolio" class="portfolio section-bg">
     <div class="container" data-aos="fade-up">
 
       <div class="section-title">
@@ -226,7 +226,7 @@
 
     </div>
   </section>
-<div class="portfolio-section" id="video" style="background-color: #fafafa !important;">
+<div class="portfolio-section pt-5" id="video">
     <div class="container">
         <div class="row">
             <div class="section-title">
@@ -237,7 +237,7 @@
 
         </div>
     </div>
-    <div class="section-bg galery">
+    <div class="galery">
         <div class="container">
             <div class="col-sm-12 col-md-12 ">
                 <div class="row justify-content-center">
