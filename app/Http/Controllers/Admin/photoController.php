@@ -20,6 +20,7 @@ class photoController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'category' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         $image = '';
@@ -30,7 +31,7 @@ class photoController extends Controller
         }
         $hsl = Photo::create([
             'title' => $request->title,
-            'body' => $request->body,
+            'category' => $request->category,
             'image' => $image,
             'created_by' => session('admin_data')->username
         ]);
@@ -53,6 +54,7 @@ class photoController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'category' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         $image = '';
@@ -65,7 +67,7 @@ class photoController extends Controller
         }
         $hsl = Photo::find($request->id)->update([
             'title' => $request->title,
-            'body' => $request->body,
+            'category' => $request->category,
             'image' => $image,
         ]);
         if($hsl){

@@ -21,10 +21,12 @@ class videoController extends Controller
         $request->validate([
             'title' => 'required',
             'link' => 'required',
+            'category' => 'required',
 
         ]);
         $hsl = Video::create([
             'title' => $request->title,
+            'category' => $request->category,
             'link' => $request->link,
             'created_by' => session('admin_data')->username
         ]);
@@ -48,10 +50,12 @@ class videoController extends Controller
         $request->validate([
             'title' => 'required',
             'link' => 'required',
+            'category' => 'required',
         ]);
 
         $hsl = Video::find($request->id)->update([
             'title' => $request->title,
+            'category' => $request->category,
             'link' => $request->link,
             'created_by' => session('admin_data')->username
         ]);

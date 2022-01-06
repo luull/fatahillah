@@ -1,34 +1,40 @@
 @extends('templates.webfront.master')
 @section('content')
-<div class="paralax-section-slide-data" style="background-image:url({{ asset($banner->image)}})">
-    <div class="overlay-banner"></div>
-</div>
+<section class="breadcrumbs">
+    <div class="container">
 
-        <div class="blog-body mb-5">
-            <div class="portfolio-section" id="portfolio-section">
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Photo</h2>
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li>Photo</li>
+        </ol>
+      </div>
 
-               <div class="container">
-                <div id="js-grid-mosaic-flat" class="cbp cbp-l-grid-mosaic-flat">
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+        <div class="blog-body mt-5 mb-5">
+            <section id="portfolio" class="portfolio">
+                <div class="container" data-aos="fade-up">
+
+                  <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
                     @foreach ($photo as $p )
-                    <div class="cbp-item ">
-                        <a href="{{asset($p->image)}}" class="cbp-caption cbp-lightbox" data-title="{{$p->title}}">
-                            <div class="cbp-caption-defaultWrap">
-                                <img alt=""  src="{{asset($p->image)}}" >
-                            </div>
-                            <div class="cbp-caption-activeWrap">
-                                <div class="cbp-l-caption-alignCenter">
-                                    <div class="cbp-l-caption-body">
-                                        <div class="cbp-l-caption-title">{{$p->title}}</div>
-                                        <!--                            <div class="cbp-l-caption-desc">by Tiberiu Neamu</div>-->
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                      <img src="{{asset($p->image)}}" class="img-fluid" alt="">
+                      <div class="portfolio-info">
+                        <h4>{{$p->title}}</h4>
+                        <p>{{$p->category}}</p>
+                        <a href="{{asset($p->image)}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                      </div>
                     </div>
                     @endforeach
+
+                  </div>
+
                 </div>
-               </div>
-            </div>
+              </section>
         </div>
 
 @stop

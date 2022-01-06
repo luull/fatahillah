@@ -23,6 +23,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>Title</th>
+                                <th>Category</th>
                                 <th>Image</th>
                                 <th>Date created</th>
                                 <th>Created by</th>
@@ -36,6 +37,7 @@
                             <tr>
                                 <td>{{$i++}}</td>
                                 <td>{{$d->title}}</td>
+                                <td>{{$d->category}}</td>
                                 <td><img src="{{ asset($d->image) }}" style="max-height: 70px;" alt=""></td>
                                 <td>{{$d->date_created}}</td>
                                 <td>{{$d->created_by}}</td>
@@ -69,6 +71,10 @@
                             <div class="form-group">
                                 <label>Title</label>
                                 <input type="text" class="form-control" name="title">
+                            </div>
+                            <div class="form-group">
+                                <label>Category</label>
+                                <input type="text" class="form-control" name="category">
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -109,6 +115,10 @@
                             <div class="form-group">
                                 <label>Title</label>
                                 <input type="text" id="edit_title" class="form-control" name="title">
+                            </div>
+                            <div class="form-group">
+                                <label>Category</label>
+                                <input type="text" id="edit_category" class="form-control" name="category">
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -158,6 +168,7 @@
                     $("#image_edit").val(hsl.image);
                     $("#edit_id").val(hsl.id);
                     $("#edit_title").val(hsl.title);
+                    $("#edit_category").val(hsl.category);
                     $("#editModal").modal();
                    }
                 }

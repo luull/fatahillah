@@ -1,9 +1,19 @@
 @extends('templates.webfront.master')
 @section('content')
-<div class="paralax-section-slide-data" style="background-image:url({{ asset($banner->image)}})">
-    <div class="overlay-banner"></div>
-</div>
-        <div class="blog-body mb-5">
+<section class="breadcrumbs">
+    <div class="container">
+
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Video</h2>
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li>Video</li>
+        </ol>
+      </div>
+
+    </div>
+  </section><!-- End Breadcrumbs -->
+        <div class="blog-body mt-5 mb-5">
             <div class="portfolio-section" id="portfolio-section">
 
                 <div class="container">
@@ -17,7 +27,8 @@
 
                                     <div class="overlay">
                                         <p class="text p-2">
-                                            <span id="ket-{{$v->link}}">{{$v->judul}}</span><br>
+                                            <span id="ket-{{$v->link}}">{{$v->title}}</span><br>
+                                            <span>{{$v->category}}</span>
                                         </p>
                                     </div>
                                 </div>
@@ -57,7 +68,7 @@
             var id = $(this).attr('id');
             $("#ym_id").val(id);
             // var url="https://www.youtube.com/embed/" + id + "?rel=0&amp;showinfo=0";
-            var mbed = '<iframe id="videoPlayer" class="videoPlayer" style="overflow: hidden !important;min-height:250px !important;" src="https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>';
+            var mbed = '<iframe id="videoPlayer" class="videoPlayer" style="overflow: hidden !important;width:100% !important;min-height:250px !important;" src="https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>';
             var ket = $("#ket-" + id).html();
             $("#modal-body").html(mbed);
             $("#modal_title").html(ket)

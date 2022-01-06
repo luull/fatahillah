@@ -78,6 +78,7 @@ Route::get('/viewnews', 'Webfront\newsController@index');
 Route::get('/viewphoto', 'Webfront\photoController@index');
 Route::get('/viewvideo', 'Webfront\videoController@index');
 Route::get('/viewevent', 'Webfront\eventController@index');
+Route::get('/contact', 'Webfront\contactController@index');
 
 Route::get('/detailnews/{id}', 'Webfront\newsController@detail');
 Route::get('/detailevent/{id}', 'Webfront\eventController@detail');

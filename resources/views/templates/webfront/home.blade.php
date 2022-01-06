@@ -1,6 +1,6 @@
 @extends('templates.webfront.master')
 @section('content')
-<div class="slider">
+{{-- <div class="slider">
     <div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="slider-shop" data-source="gallery" style="background:rgba(255,255,255,0);padding:0px;">
         <!-- START REVOLUTION SLIDER 5.4.8.1 fullscreen mode -->
         <div id="rev_slider_1_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.8.1">
@@ -83,70 +83,91 @@
             </ul>
             <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div></div>
     </div><!-- END REVOLUTION SLIDER -->
-</div>
-<div class="service-section" id="about" style="background-color: #fafafa !important;">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 heading text-center">
-                <span class="title">About Us</span>
-                <h3 class="text-center">{{$about->title}}</h3>
-                <p class="w-75">{!! Str::limit($about->body, 200,'...') !!}</p>
-                <a href="/about" class="btn green-and-blue mt-5 mb-5" href="javascript:void(0)">Lihat Selengkapnya</a>
-            </div>
-        </div>
+</div> --}}
+@foreach ( $banner as $b )
+<section id="hero" style="background-image: url({{asset($b->image)}})" class="d-flex align-items-center">
+    <div class="container" data-aos="zoom-out" data-aos-delay="100">
+      <h1>{{$b->title}}<span></span></h1>
+      <h2>{{$b->description}}</h2>
+      <div class="d-flex">
+        <a href="#about" class="btn-get-started scrollto">Get Started</a>
+
+      </div>
     </div>
-</div>
-<div class="service-section" id="news">
-    <div class="blog-body">
-        <div class="container blog-container">
-            <div class="row justify-content-center">
-                <div class="col-12 mb-4 heading text-center">
-                    <span class="title">News </span>
-                    <h3 class="text-center">News Section</h3>
-                </div>
-                @foreach ($news as $n )
+  </section>
+  @endforeach
+  <section id="about" class="about section-bg">
+    <div class="container" data-aos="fade-up">
 
-                <div class="col-md-4 col-lg-4">
-                    <article class="blog-classic">
-                        <div class="post-thumbnail">
-                            <div class="about-image hover-effect">
-                                <img src="{{ asset($n->image)}}" style="width:100%:height:280px !Important;" alt="this is a post">
-                            </div>
-                        </div>
-                        <h2 class="post-title text-center text-lg-left">
-                            <a href="#" rel="bookmark">{{$n->title}}</a>
-                        </h2>
-                        <div class="post-details alt-font text-center text-lg-left">
-                            <b>{{date('d-m-Y', strtotime($n->date_created))}}</b><span class="post-date"></span> <span class="post-separator">|</span>
-                            <span class="post-author">
-                                By <a href="#">{{$n->created_by}}</a>
-                            </span>
-                            <span class="post-separator">|</span>
+      <div class="section-title">
+        <h2>About</h2>
+        <h3>Our <span>About Us</span></h3>
 
+      </div>
 
-
-                        </div>
-                        <div class="post-content text-center text-lg-left">
-
-                            <p>{!! Str::limit($n->body, 200,'...') !!}</p>
-
-                            <a class="btn green-and-blue" href="/detailnews/{{$n->id}}">Read More</a>
-
-                        </div>
-                    </article>
-                </div>
-                @endforeach
-            </div>
+      <div class="row">
+        <div class="col-lg-5" data-aos="fade-right" data-aos-delay="100">
+          <img src="{{ asset($about->image)}}" class="img-fluid" alt="">
         </div>
+        <div class="col-lg-7 pt-4 pt-lg-0 content d-flex flex-column justify-content-start" data-aos="fade-up" data-aos-delay="100">
+          <h3>{{$about->title}}</h3>
+          <p class="fst-italic">
+            {!! Str::limit($about->body, 400,'...') !!}
+          </p>
+          <div class="row">
+            <div class="col-md-4">
+                <a href="#about" class="btn btn-custom scrollto">View Detail</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
     </div>
-</div>
+  </section>
+  <section id="team" class="team section-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>News</h2>
+        <h3>Our <span>News</span></h3>
+
+      </div>
+
+      <div class="row justify-content-center">
+        @foreach ($news as $n )
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <a href="/detailnews/{{$n->id}}">
+          <div class="member">
+            <div class="member-img">
+              <img src="{{ asset($n->image)}}" style="width:100%;height: 280px !important;" class="img-fluid" alt="">
+
+            </div>
+            <div class="member-info">
+              <h4>{{$n->title}}</h4>
+              <span>{!! Str::limit($n->body, 200,'...') !!}</span>
+             <hr>
+             <p><i class="bi bi-calendar"></i> {{date('d-m-Y', strtotime($n->date_created))}} | {{$n->created_by}}</p>
+            </div>
+          </div>
+        </a>
+        </div>
+        @endforeach
+
+      </div>
+
+    </div>
+  </section>
+
 <div class="service-section" id="event" style="background-color: #fafafa !important;">
         <div class="container blog-container">
             <div class="row justify-content-center">
-                <div class="col-12 mb-4 heading text-center">
-                    <span class="title">Event </span>
-                    <h3 class="text-center">Event Section</h3>
-                </div>
+                <div class="section-title">
+                    <h2>Event</h2>
+                    <h3>Check our <span>Event</span></h3>
+
+                  </div>
+
                 <div class="col-md-12">
                     @foreach ( $event as $e )
 
@@ -179,44 +200,41 @@
 </div>
 
  </div>
-<div class="portfolio-section mb-5" id="photo">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h3 class="title text-center">Our Photo</h3>
-                <h2 class="sub-heading text-center">Photo Section</h2>
-            </div>
-        </div>
-    </div>
-   <div class="container mt-4 mb-5">
-    <div id="js-grid-mosaic-flat" class="cbp cbp-l-grid-mosaic-flat">
+ <section id="portfolio" class="portfolio">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Photo</h2>
+        <h3>Check our <span>Photo</span></h3>
+
+      </div>
+
+      <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
         @foreach ($photo as $p )
-        <div class="cbp-item ">
-            <a href="{{asset($p->image)}}" class="cbp-caption cbp-lightbox" data-title="{{$p->title}}">
-                <div class="cbp-caption-defaultWrap">
-                    <img alt=""  src="{{asset($p->image)}}" >
-                </div>
-                <div class="cbp-caption-activeWrap">
-                    <div class="cbp-l-caption-alignCenter">
-                        <div class="cbp-l-caption-body">
-                            <div class="cbp-l-caption-title">{{$p->title}}</div>
-                            <!--                            <div class="cbp-l-caption-desc">by Tiberiu Neamu</div>-->
-                        </div>
-                    </div>
-                </div>
-            </a>
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <img src="{{asset($p->image)}}" class="img-fluid" alt="">
+          <div class="portfolio-info">
+            <h4>{{$p->title}}</h4>
+            <p>{{$p->category}}</p>
+            <a href="{{asset($p->image)}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+          </div>
         </div>
         @endforeach
+
+      </div>
+
     </div>
-   </div>
-</div>
+  </section>
 <div class="portfolio-section" id="video" style="background-color: #fafafa !important;">
     <div class="container">
         <div class="row">
-            <div class="col-12 text-center">
-                <h3 class="title text-center">Our Video</h3>
-                <h2 class="sub-heading text-center">Video Section</h2>
-            </div>
+            <div class="section-title">
+                <h2>Video</h2>
+                <h3>Check our <span>Video</span></h3>
+
+              </div>
+
         </div>
     </div>
     <div class="section-bg galery">
@@ -232,6 +250,7 @@
                             <div class="overlay">
                                 <p class="text p-2">
                                     <span id="ket-{{$v->link}}">{{$v->title}}</span><br>
+                                    <span>{{$v->category}}</span>
                                 </p>
                             </div>
                         </div>
@@ -272,7 +291,7 @@
             var id = $(this).attr('id');
             $("#ym_id").val(id);
             // var url="https://www.youtube.com/embed/" + id + "?rel=0&amp;showinfo=0";
-            var mbed = '<iframe id="videoPlayer" class="videoPlayer" style="overflow: hidden !important;min-height:250px !important;" src="https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>';
+            var mbed = '<iframe id="videoPlayer" class="videoPlayer" style="overflow: hidden !important;width:100% !important;min-height:250px !important;" src="https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>';
             var ket = $("#ket-" + id).html();
             $("#modal-body").html(mbed);
             $("#modal_title").html(ket)

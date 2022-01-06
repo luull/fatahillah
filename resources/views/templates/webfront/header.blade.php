@@ -1,121 +1,50 @@
-<div class="header-area">
-    <div class="container">
-        <div class="row upper-nav">
-            <div class="col-3 nav-icon pt-3">
-                <ul class="social-icons-simple text-left">
-                    <li><a href="javascript:void(0)" class="facebook-bg-hvr"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
-                    <li><a href="javascript:void(0)" class="twitter-bg-hvr"><i class="fab fa-twitter" aria-hidden="true"></i></a> </li>
-                    <li><a href="javascript:void(0)" class="instagram-bg-hvr"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
-                </ul>
-            </div>
+  <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">{{session('config')->email}}</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>{{session('config')->kontak}}</span></i>
+      </div>
 
-            <div class="col-6 text-center nav-logo pt-3">
-                <a href="index-corporate-executive.html" class="navbar-brand logo-white"><img src="{{ asset('logo-light.png')}}" alt="img"></a>
-                <a href="index-corporate-executive.html" class="navbar-brand logo-dark"><img src="{{ asset(session('logo'))}}" alt="img"></a>
-            </div>
-
-            <div class="col-3 nav-utility text-right d-flex justify-content-end align-items-center pt-3">
-                <div class="manage-icons d-none d-md-block">
-                    <a href="javascript:void(0);" class="d-flex justify-content-end white-trans-btn-and-green text-white">Get Started </a>
-                 </div>
-            </div>
-
-            <div class="col-12 nav-mega">
-                <header class="site-header" id="header">
-                    <nav class="navbar navbar-expand-md  static-nav">
-                        <div class="container position-relative megamenu-custom">
-                            <a class="navbar-brand center-brand" href="index-corporate-executive.html">
-                                <img src="{{ asset(session('config')->logo)}}" alt="logo" class="logo-scrolled">
-                            </a>
-                            <div class="collapse navbar-collapse">
-                                <ul class="navbar-nav ml-auto mr-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">HOME</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link {{ Request::is('about') ? 'active' : '' }}"  href="/about">ABOUT US</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link {{ Request::is('viewevent') ? 'active' : '' }}"  href="/viewevent">EVENT</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link {{ Request::is('viewnews') ? 'active' : '' }}"  href="/viewnews">NEWS</a>
-                                    </li>
-
-                                    <li class="nav-item dropdown position-relative">
-                                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">GALLERY</a>
-                                        <div class="dropdown-menu">
-                                            <ul>
-                                                <li><i class="lni-angle-double-right right-arrow"></i><a class="dropdown-item {{ Request::is('viewphoto') ? 'active' : '' }}" href="/viewphoto">PHOTO</a></li>
-                                                <li><i class="lni-angle-double-right right-arrow"></i><a class="dropdown-item {{ Request::is('viewvideo') ? 'active' : '' }}" href="/viewvideo">VIDEO</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#contact-sec">CONTACT </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!--side menu open button-->
-                        <a href="javascript:void(0)" class="d-inline-block sidemenu_btn d-lg-none d-md-block" id="sidemenu_toggle">
-                            <span></span> <span></span> <span></span>
-                        </a>
-                    </nav>
-
-                    <!-- side menu -->
-                    <div class="side-menu opacity-0 gradient-bg hidden">
-                        <div class="inner-wrapper">
-                            <a href="index-corporate-executive.html"><img src="corporate-executive/img/logo.png" alt="img"></a>
-                            <span class="btn-close btn-close-no-padding" id="btn_sideNavClose"><i></i><i></i></span>
-                            <nav class="side-nav w-100">
-                                <ul class="navbar-nav">
-
-                                    <li class="nav-item">
-                                        <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">HOME</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link {{ Request::is('about') ? 'active' : '' }}" href="/about">ABOUT US</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link {{ Request::is('events') ? 'active' : '' }}"  href="/events">EVENT</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link {{ Request::is('news') ? 'active' : '' }}"  href="/viewnews">NEWS</a>
-                                    </li>
-
-
-                                    <li class="nav-item dropdown position-relative">
-                                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">GALLERY</a>
-                                        <div class="dropdown-menu">
-                                            <ul>
-                                                <li><i class="lni-angle-double-right right-arrow"></i><a class="dropdown-item {{ Request::is('viewphoto') ? 'active' : '' }}" href="/viewphoto">PHOTO</a></li>
-                                                <li><i class="lni-angle-double-right right-arrow"></i><a class="dropdown-item {{ Request::is('viewvideo') ? 'active' : '' }}" href="/viewvideo">VIDEO</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#contact-sec">CONTACT </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                            <div class="side-footer w-100">
-                                <ul class="social-icons-simple white top40">
-                                    <li><a class="facebook-bg-hvr"  href="javascript:void(0)"><i class="fab fa-facebook-f"></i> </a> </li>
-                                    <li><a class="twitter-bg-hvr" href="javascript:void(0)"><i class="fab fa-twitter"></i> </a> </li>
-                                    <li><a class="instagram-bg-hvr" href="javascript:void(0)"><i class="fab fa-instagram"></i> </a> </li>
-                                </ul>
-                                <p class="whitecolor">&copy; <span id="year"></span> Megaone Template. Made With Love by ThemesIndustry</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="close_side_menu" class="tooltip"></div>
-                    <!-- End side menu -->
-                </header>
-            </div>
-        </div>
     </div>
-</div>
+  </section>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      {{-- <h1 class="logo"><a href="index.html">BizLand<span>.</span></a></h1> --}}
+      <!-- Uncomment below if you prefer to use an image logo -->
+     <a href="/" class="logo"><img src="{{ asset(session('config')->logo)}}" alt=""> <small>{{session('config')->name}}</small></a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+            <li>
+                <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">Home</a>
+            </li>
+            <li>
+                <a class="nav-link {{ Request::is('about') ? 'active' : '' }}"  href="/about">About us</a>
+            </li>
+            <li>
+                <a class="nav-link {{ Request::is('viewevent') ? 'active' : '' }}"  href="/viewevent">Event</a>
+            </li>
+            <li>
+                <a class="nav-link {{ Request::is('viewnews') ? 'active' : '' }}"  href="/viewnews">News</a>
+            </li>
+
+          <li class="dropdown"><a href="#"><span>Gallery</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+                <li><i class="lni-angle-double-right right-arrow"></i><a class="{{ Request::is('viewphoto') ? 'active' : '' }}" href="/viewphoto">Photo</a></li>
+                <li><i class="lni-angle-double-right right-arrow"></i><a class="{{ Request::is('viewvideo') ? 'active' : '' }}" href="/viewvideo">Video</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="nav-link {{ Request::is('contact') ? 'active' : '' }}" href="/contact">Contact </a>
+        </li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
 

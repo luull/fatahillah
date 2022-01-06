@@ -12,63 +12,46 @@
     <meta name="keywords" content="creative, modern, clean, bootstrap responsive, html5, css3, portfolio, blog, agency, templates, multipurpose, one page, corporate, start-up, studio, branding, designer, freelancer, carousel, parallax, photography, personal, masonry, grid, faq">
     <!-- Page Title -->
     <title>SMK FATAHILLAH</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{{ asset('templates/webfront2/vendor/aos/aos.css')}}" rel="stylesheet">
+    <link href="{{ asset('templates/webfront2/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('templates/webfront2/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+    <link href="{{ asset('templates/webfront2/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('templates/webfront2/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('templates/webfront2/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{{ asset('templates/webfront2/css/style.css')}}" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico')}}"/>
-    <!-- Bundle -->
-    <link rel="stylesheet" href="{{ asset('templates/webfront/vendor/css/bundle.min.css')}}">
-    <!-- Plugin Css -->
-    <link rel="stylesheet" href="{{ asset('templates/webfront/vendor/css/jquery.fancybox.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('templates/webfront/vendor/css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('templates/webfront/vendor/css/swiper.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('templates/webfront/vendor/css/cubeportfolio.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('templates/webfront/vendor/css/wow.css')}}">
-    <link rel="stylesheet" href="{{ asset('templates/webfront/vendor/css/LineIcons.min.css')}}">
-    <!-- Slider Setting Css  -->
-    <link rel="stylesheet" href="{{ asset('templates/webfront/css/settings.css')}}">
-    <!-- Mega Menu  -->
-    <link rel="stylesheet" href="{{ asset('templates/webfront/css/megamenu.css')}}">
-    <!-- StyleSheet  -->
-    <link rel="stylesheet" href="{{ asset('templates/webfront/css/style.css')}}">
-    <!-- Custom Css  -->
-    <link rel="stylesheet" href="{{ asset('templates/webfront/css/custom.css')}}">
 </head>
-<body data-spy="scroll" data-target=".navbar-nav">
-    <a class="scroll-top-arrow" href="javascript:void(0);"><i class="fa fa-angle-up"></i></a>
-    <div class="loader1">
-        <div class="loader-inner">
-            <div id="preloader">
-                <div id="loader"></div>
-            </div>
-        </div>
-    </div>
+<body>
     @include('templates.webfront.header')
-    @yield('content')
+    <main id="main">
+        @yield('content')
+    </main>
     @include('templates.webfront.footer')
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
     <!-- JavaScript -->
-<script src="{{ asset('templates/webfront/vendor/js/bundle.min.js')}}"></script>
-<!-- Plugin Js -->
-<script src="{{ asset('templates/webfront/vendor/js/jquery.fancybox.min.js')}}"></script>
-<script src="{{ asset('templates/webfront/vendor/js/owl.carousel.min.js')}}"></script>
-<script src="{{ asset('templates/webfront/vendor/js/swiper.min.js')}}"></script>
-<script src="{{ asset('templates/webfront/vendor/js/jquery.cubeportfolio.min.js')}}"></script>
-<script src="{{ asset('templates/webfront/vendor/js/wow.min.js')}}"></script>
-<script src="{{ asset('templates/webfront/vendor/js/bootstrap-input-spinner.js')}}"></script>
-<script src="{{ asset('templates/webfront/vendor/js/parallaxie.min.js')}}"></script>
-<script src="{{ asset('templates/webfront/vendor/js/jquery.appear.js')}}"></script>
-<script src="{{ asset('templates/webfront/vendor/js/jquery.themepunch.tools.min.js')}}"></script>
-<script src="{{ asset('templates/webfront/vendor/js/jquery.themepunch.revolution.min.js')}}"></script>
-<!-- SLIDER REVOLUTION EXTENSIONS -->
-<script src="{{ asset('templates/webfront/vendor/js/extensions/revolution.extension.actions.min.js')}}"></script>
-<script src="{{ asset('templates/webfront/vendor/js/extensions/revolution.extension.carousel.min.js')}}"></script>
-<script src="{{ asset('templates/webfront/vendor/js/extensions/revolution.extension.kenburn.min.js')}}"></script>
-<script src="{{ asset('templates/webfront/vendor/js/extensions/revolution.extension.layeranimation.min.js')}}"></script>
-<script src="{{ asset('templates/webfront/vendor/js/extensions/revolution.extension.migration.min.js')}}"></script>
-<script src="{{ asset('templates/webfront/vendor/js/extensions/revolution.extension.navigation.min.js')}}"></script>
-<script src="{{ asset('templates/webfront/vendor/js/extensions/revolution.extension.parallax.min.js')}}"></script>
-<script src="{{ asset('templates/webfront/vendor/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
-<script src="{{ asset('templates/webfront/vendor/js/extensions/revolution.extension.video.min.js')}}"></script>
-<!-- FUNCTION Script -->
-<script src="{{ asset('templates/webfront/vendor/js/contact_us.js')}}"></script>
-<script src="{{ asset('templates/webfront/js/script.js')}}"></script>
-@yield('script')
+    <!-- Vendor JS Files -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+  <script src="{{ asset('templates/webfront2/vendor/purecounter/purecounter.js')}}"></script>
+  <script src="{{ asset('templates/webfront2/vendor/aos/aos.js')}}"></script>
+  <script src="{{ asset('templates/webfront2/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{ asset('templates/webfront2/vendor/glightbox/js/glightbox.min.js')}}"></script>
+  <script src="{{ asset('templates/webfront2/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+  <script src="{{ asset('templates/webfront2/vendor/swiper/swiper-bundle.min.js')}}"></script>
+  <script src="{{ asset('templates/webfront2/vendor/waypoints/noframework.waypoints.js')}}"></script>
+  <script src="{{ asset('templates/webfront2/vendor/php-email-form/validate.js')}}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{ asset('templates/webfront2/js/main.js')}}"></script>
+    @yield('script')
 </body>
 </html>

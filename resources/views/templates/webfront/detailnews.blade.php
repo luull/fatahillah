@@ -1,21 +1,32 @@
 @extends('templates.webfront.master')
 @section('content')
-<div class="paralax-section-slide-data" style="background-image:url({{ asset($banner->image)}})">
-    <div class="overlay-banner"></div>
-</div>
-<div class="blog-body">
+<section class="breadcrumbs">
+    <div class="container">
+
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Detail News</h2>
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/news">News</a></li>
+          <li>Detail News</li>
+        </ol>
+      </div>
+
+    </div>
+  </section><!-- End Breadcrumbs -->
+<div class="blog-body mt-5">
     <div class="container blog-container">
 
             <div class="row standalone-row align-items-start">
 
                 <div class="col-lg-4">
                     <div class="blog-image wow hover-effect fadeInLeft">
-                        <img src="{{asset($news->image)}}" alt="image">
+                        <img src="{{asset($news->image)}}" class="img-fluid" alt="image">
                     </div>
                 </div>
                 <div class="col-lg-8">
                     <article class="blog-minimal">
-                        <div class="post-details alt-font text-center text-lg-left">
+                        <div class="post-details alt-font text-lg-left">
                             {{date('d-m-Y', strtotime($news->date_created))}}<span class="post-date"></span> <span class="post-separator">|</span>
                             <span class="post-author">
                                     By <a href="#">{{$news->created_by}}</a>
@@ -24,11 +35,11 @@
 
                         </div>
 
-                        <h2 class="post-title-minimal text-center text-lg-left">
+                        <h2 class="post-title-minimal text-lg-left">
                             <a href="#" rel="bookmark">{{$news->title}}</a>
                         </h2>
 
-                        <div class="post-content text-center text-lg-left">
+                        <div class="post-content text-lg-left">
                             <p>{!!$news->body!!}</p>
 
                         </div>

@@ -1,9 +1,20 @@
 @extends('templates.webfront.master')
 @section('content')
-<div class="paralax-section-slide-data" style="background-image:url({{ asset($banner->image)}})">
-    <div class="overlay-banner"></div>
-</div>
-<div class="about_content">
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+
+          <div class="d-flex justify-content-between align-items-center">
+            <h2>Event</h2>
+            <ol>
+              <li><a href="/">Home</a></li>
+              <li>Event</li>
+            </ol>
+          </div>
+
+        </div>
+      </section><!-- End Breadcrumbs -->
+<div class="about_content mt-5">
 
     <div class="standalone-area">
         <div class="blog-body">
