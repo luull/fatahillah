@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <title>Fatahillah - Login Page</title>
-    <link rel="icon" type="image/x-icon" href="{{ asset('templates/admin/assets/img/favicon.ico')}}"/>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico')}}"/>
 
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
     <link href="{{ asset('templates/admin/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
