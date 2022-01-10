@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 03, 2022 at 06:28 PM
+-- Generation Time: Jan 10, 2022 at 11:20 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -30,9 +30,9 @@ SET time_zone = "+00:00";
 CREATE TABLE `about` (
   `id` int(11) NOT NULL,
   `title` varchar(255) DEFAULT NULL,
-  `body` varchar(1000) DEFAULT NULL,
-  `vission` varchar(500) DEFAULT NULL,
-  `mission` varchar(500) DEFAULT NULL,
+  `body` text DEFAULT NULL,
+  `vission` text DEFAULT NULL,
+  `mission` text DEFAULT NULL,
   `image` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -99,7 +99,7 @@ INSERT INTO `configuration` (`id`, `name`, `email`, `kontak`, `wa`, `fb`, `ig`, 
 CREATE TABLE `event` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
-  `body` varchar(1000) NOT NULL,
+  `body` text NOT NULL,
   `date` date NOT NULL,
   `time` time NOT NULL,
   `image` varchar(100) DEFAULT NULL,
@@ -117,13 +117,26 @@ INSERT INTO `event` (`id`, `title`, `body`, `date`, `time`, `image`, `date_creat
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `logo`
+--
+
+CREATE TABLE `logo` (
+  `id` int(11) NOT NULL,
+  `image` varchar(100) NOT NULL,
+  `date_created` datetime NOT NULL DEFAULT current_timestamp(),
+  `created_by` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `news`
 --
 
 CREATE TABLE `news` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
-  `body` varchar(1000) NOT NULL,
+  `body` text NOT NULL,
   `image` varchar(100) DEFAULT NULL,
   `date_created` datetime NOT NULL DEFAULT current_timestamp(),
   `created_by` varchar(100) NOT NULL
@@ -146,6 +159,7 @@ INSERT INTO `news` (`id`, `title`, `body`, `image`, `date_created`, `created_by`
 CREATE TABLE `photo` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
+  `category` varchar(255) DEFAULT NULL,
   `image` varchar(100) NOT NULL,
   `date_created` datetime NOT NULL DEFAULT current_timestamp(),
   `created_by` varchar(100) NOT NULL
@@ -155,10 +169,10 @@ CREATE TABLE `photo` (
 -- Dumping data for table `photo`
 --
 
-INSERT INTO `photo` (`id`, `title`, `image`, `date_created`, `created_by`) VALUES
-(2, 'test', 'photo/1640611600.jpg', '2021-12-27 20:26:40', 'admin'),
-(6, 'aasdasd', 'photo/1640959060.jpg', '2021-12-31 20:57:40', 'admin'),
-(12, 'gfsefres', 'photo/1640959797.jpg', '2021-12-31 21:09:57', 'admin');
+INSERT INTO `photo` (`id`, `title`, `category`, `image`, `date_created`, `created_by`) VALUES
+(2, 'test', 'domva', 'photo/1640611600.jpg', '2021-12-27 20:26:40', 'admin'),
+(6, 'aasdasd', 'duduk', 'photo/1640959060.jpg', '2021-12-31 20:57:40', 'admin'),
+(12, 'gfsefres', 'no photo', 'photo/1640959797.jpg', '2021-12-31 21:09:57', 'admin');
 
 -- --------------------------------------------------------
 
@@ -190,6 +204,7 @@ INSERT INTO `user` (`id`, `username`, `password`, `date_created`) VALUES
 CREATE TABLE `video` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
+  `category` varchar(255) DEFAULT NULL,
   `link` varchar(500) NOT NULL,
   `date_created` datetime NOT NULL DEFAULT current_timestamp(),
   `created_by` varchar(100) NOT NULL
@@ -199,9 +214,8 @@ CREATE TABLE `video` (
 -- Dumping data for table `video`
 --
 
-INSERT INTO `video` (`id`, `title`, `link`, `date_created`, `created_by`) VALUES
-(1, 'tests', 'ukHp7yqXYX0', '2021-12-28 19:43:06', 'admin'),
-(2, 'test', 'e4oTA6G3k44', '2021-12-31 22:03:41', 'admin');
+INSERT INTO `video` (`id`, `title`, `category`, `link`, `date_created`, `created_by`) VALUES
+(1, 'Review HP', 'hp', '7E1kaSfV-wY', '2021-12-28 19:43:06', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -229,6 +243,12 @@ ALTER TABLE `configuration`
 -- Indexes for table `event`
 --
 ALTER TABLE `event`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `logo`
+--
+ALTER TABLE `logo`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -284,6 +304,12 @@ ALTER TABLE `event`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `logo`
+--
+ALTER TABLE `logo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
@@ -305,7 +331,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `video`
 --
 ALTER TABLE `video`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
