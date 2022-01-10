@@ -87,15 +87,26 @@
 @foreach ( $banner as $b )
 <section id="hero" style="background-image: url({{asset($b->image)}})" class="d-flex align-items-center">
     <div class="container" data-aos="zoom-out" data-aos-delay="100">
-      <h1>{{$b->title}}<span></span></h1>
-      <h2>{{$b->description}}</h2>
-      <div class="d-flex">
-        <a href="#about" class="btn-get-started scrollto">Get Started</a>
-
-      </div>
+      <h1>{{$b->title}} <br> <span>{{$b->description}}</span></h1>
     </div>
   </section>
   @endforeach
+
+  <section id="clients" class="clients section-bg">
+      <div class="container" data-aos="zoom-in">
+
+          <div class="row justify-content-between">
+
+              @foreach ($logo as $l)
+              <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                  <img src="{{$l->image}}" class="img-fluid" alt="">
+                </div>
+                @endforeach
+
+            </div>
+
+        </div>
+    </section>
   <section id="about" class="about">
     <div class="container" data-aos="fade-up">
 

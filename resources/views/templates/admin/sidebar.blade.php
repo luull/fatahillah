@@ -59,6 +59,16 @@
                 </a>
                 <div class="tooltip"><span>News</span></div>
             </li>
+            <li class="menu menu-single {{ Request::is('admin/logo') ? 'active' : '' }}">
+                <a href="/admin/logo" data-active="{{ Request::is('admin/logo') ? 'true' : '' }}" class="menu-toggle">
+                    <div class="base-menu">
+                        <div class="base-icons">
+                            <i data-feather="award"></i>
+                        </div>
+                    </div>
+                </a>
+                <div class="tooltip"><span>Logo</span></div>
+            </li>
             <li class="menu menu-single {{ Request::is('admin/photo') ? 'active' : '' }}">
                 <a href="/admin/photo" data-active="{{ Request::is('admin/photo') ? 'true' : '' }}" class="menu-toggle">
                     <div class="base-menu">

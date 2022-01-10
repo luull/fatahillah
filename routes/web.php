@@ -47,6 +47,13 @@ Route::get('/admin/banner/delete/{id}', 'Admin\bannerController@delete')->name('
 Route::get('/admin/banner/find/{id}', 'Admin\bannerController@find');
 Route::post('/admin/updatebanner', 'Admin\bannerController@update')->name('update-banner');
 
+Route::get('/admin/logo', 'Admin\logoController@index');
+Route::post('/admin/createlogo', 'Admin\logoController@create')->name('create-logo');
+Route::get('/admin/logo/delete/{id}', 'Admin\logoController@delete')->name('delete-logo');
+Route::get('/admin/logo/find/{id}', 'Admin\logoController@find');
+Route::post('/admin/updatelogo', 'Admin\logoController@update')->name('update-logo');
+
+
 Route::get('/admin/photo', 'Admin\photoController@index');
 Route::post('/admin/createphoto', 'Admin\photoController@create')->name('create-photo');
 Route::get('/admin/photo/delete/{id}', 'Admin\photoController@delete')->name('delete-photo');
@@ -55,8 +62,7 @@ Route::post('/admin/updatephoto', 'Admin\photoController@update')->name('update-
 
 Route::get('/admin/video', 'Admin\videoController@index');
 Route::post('/admin/createvideo', 'Admin\videoController@create')->name('create-video');
-Route::get('/admin/video/delete/{id}', 'Admin
-\videoController@delete')->name('delete-video');
+Route::get('/admin/video/delete/{id}', 'Admin\videoController@delete')->name('delete-video');
 Route::get('/admin/video/find/{id}', 'Admin\videoController@find');
 Route::post('/admin/updatevideo', 'Admin\videoController@update')->name('update-video');
 

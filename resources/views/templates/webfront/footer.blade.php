@@ -27,8 +27,8 @@
             <div class="col-lg-3 col-md-6 footer-links" data-aos="fade-left" data-aos-delay="100">
                 <h4>Kontak</h4>
                 <ul>
-                    <li><a href="tel:blabla">Kontak : {{ session('config')->kontak}}</a></li>
-                    <li><a href="mailto:blabla"> Email : {{ session('config')->email}}</a></li>
+                    <li><a href="tel:{{session('config')->kontak}}">Kontak : {{ session('config')->kontak}}</a></li>
+                    <li><a href="mailto:{{session('config')->email}}"> Email : {{ session('config')->email}}</a></li>
                     <li><a href="https://api.whatsapp.com/send?phone={{ session('config')->wa }}" target="blank" href="#"> Whatsapp : {{ session('config')->wa }}</a></li>
                 </ul>
             </div>

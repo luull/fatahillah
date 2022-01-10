@@ -5,7 +5,11 @@
         <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">{{session('config')->email}}</a></i>
         <i class="bi bi-phone d-flex align-items-center ms-4"><span>{{session('config')->kontak}}</span></i>
       </div>
-
+      <div class="social-links d-none d-md-flex align-items-center">
+        <a href="https://api.whatsapp.com/send?phone={{ session('config')->wa }}" target="_blank" class="twitter"><i class="bi bi-whatsapp"></i></a>
+        <a href="https://www.facebook.com/{{session('config')->fb}}" target="_blank" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/{{session('config')->ig}}" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
+      </div>
     </div>
   </section>
 
