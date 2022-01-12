@@ -127,7 +127,7 @@
           </p>
           <div class="row">
             <div class="col-md-4">
-                <a href="#about" class="btn btn-custom scrollto">View Detail</a>
+                <a href="/about" class="btn btn-custom scrollto">View Detail</a>
             </div>
           </div>
         </div>

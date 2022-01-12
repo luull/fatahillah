@@ -167,12 +167,13 @@
                    if (hsl.error){
                        alert(hsl.message);
                    } else{
+                       console.log(hsl.image)
                     $("#image_view").show();
                     $("#image_view").attr('src',url + hsl.image);
                     $("#image_edit").val(hsl.image);
                     $("#edit_id").val(hsl.id);
                     $("#edit_title").val(hsl.title);
-                    $("#edit_description").val(hsl.description);
+                    $("textarea#edit_description").val(hsl.description);
                     $("#editModal").modal();
                    }
                 }

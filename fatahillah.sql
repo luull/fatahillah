@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 10, 2022 at 11:20 AM
+-- Generation Time: Jan 12, 2022 at 02:45 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -63,7 +63,7 @@ CREATE TABLE `banner` (
 --
 
 INSERT INTO `banner` (`id`, `title`, `description`, `image`, `date_created`, `created_by`) VALUES
-(1, 'test', 'test ini bannernya loh', 'banner/1640875349.jpg', '2021-12-28 20:15:28', 'admin');
+(1, 'test 1', 'test ini bannernya loh ya', 'banner/1641951339.png', '2021-12-28 20:15:28', 'admin');
 
 -- --------------------------------------------------------
 
@@ -75,7 +75,7 @@ CREATE TABLE `configuration` (
   `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
-  `kontak` varchar(12) DEFAULT NULL,
+  `kontak` text DEFAULT NULL,
   `wa` varchar(12) DEFAULT NULL,
   `fb` varchar(100) DEFAULT NULL,
   `ig` varchar(100) DEFAULT NULL,
