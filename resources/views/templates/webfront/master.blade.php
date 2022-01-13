@@ -48,7 +48,6 @@
   <script src="{{ asset('templates/webfront2/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
   <script src="{{ asset('templates/webfront2/vendor/swiper/swiper-bundle.min.js')}}"></script>
   <script src="{{ asset('templates/webfront2/vendor/waypoints/noframework.waypoints.js')}}"></script>
-  <script src="{{ asset('templates/webfront2/vendor/php-email-form/validate.js')}}"></script>
 
   <!-- Template Main JS File -->
   <script src="{{ asset('templates/webfront2/js/main.js')}}"></script>

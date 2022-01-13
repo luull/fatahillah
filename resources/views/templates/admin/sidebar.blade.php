@@ -39,18 +39,8 @@
                 </a>
                 <div class="tooltip"><span>Banner</span></div>
             </li>
-            <li class="menu menu-single {{ Request::is('admin/event') ? 'active' : '' }}">
-                <a href="/admin/event" data-active="{{ Request::is('admin/event') ? 'true' : '' }}" class="menu-toggle">
-                    <div class="base-menu">
-                        <div class="base-icons">
-                            <i data-feather="calendar"></i>
-                        </div>
-                    </div>
-                </a>
-                <div class="tooltip"><span>Event</span></div>
-            </li>
-            <li class="menu {{ Request::is('admin/news','admin/program') ? 'active' : '' }}">
-                <a href="#news" data-active="{{ Request::is('admin/news','admin/program','admin/curricular','admin/osis','admin/achievement') ? 'true' : 'false' }}" class="menu-toggle">
+            <li class="menu {{ Request::is('admin/news','admin/event','admin/program','admin/curricular','admin/osis','admin/achievement','admin/curriculum') ? 'active' : '' }}">
+                <a href="#news" data-active="{{ Request::is('admin/news','admin/event','admin/program','admin/curricular','admin/osis','admin/achievement','admin/curriculum') ? 'true' : 'false' }}" class="menu-toggle">
                     <div class="base-menu">
                         <div class="base-icons">
                             <i data-feather="align-center"></i>
@@ -99,6 +89,16 @@
                     </div>
                 </a>
                 <div class="tooltip"><span>User Management</span></div>
+            </li>
+            <li class="menu menu-single {{ Request::is('admin/service') ? 'active' : '' }}">
+                <a href="/admin/service" data-active="{{ Request::is('admin/service') ? 'true' : '' }}" class="menu-toggle">
+                    <div class="base-menu">
+                        <div class="base-icons">
+                            <i data-feather="thumbs-up"></i>
+                        </div>
+                    </div>
+                </a>
+                <div class="tooltip"><span>Layanan Pengaduan</span></div>
             </li>
             <li class="menu menu-single {{ Request::is('/admin/configuration') ? 'active' : '' }}">
                 <a href="/admin/configuration" data-active="{{ Request::is('/admin/configuration') ? 'true' : '' }}" class="menu-toggle">
@@ -170,6 +170,9 @@
                 <li class="{{ Request::is('admin/news') ? 'active' : '' }}">
                     <a href="/admin/news">Berita</a>
                 </li>
+                <li class="{{ Request::is('admin/event') ? 'active' : '' }}">
+                    <a href="/admin/event">Acara</a>
+                </li>
                 <li class="{{ Request::is('admin/program') ? 'active' : '' }}">
                     <a href="/admin/program">Program</a>
                 </li>
@@ -181,6 +184,9 @@
                 </li>
                 <li class="{{ Request::is('admin/achievement') ? 'active' : '' }}">
                     <a href="/admin/achievement">Prestasi</a>
+                </li>
+                <li class="{{ Request::is('admin/curriculum') ? 'active' : '' }}">
+                    <a href="/admin/curriculum">Kurikulum</a>
                 </li>
             </ul>
         </div>

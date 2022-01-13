@@ -108,9 +108,19 @@ Route::get('/admin/achievement/delete/{id}', 'Admin\achievementController@delete
 Route::get('/admin/achievement/find/{id}', 'Admin\achievementController@find');
 Route::post('/admin/updateachievement', 'Admin\achievementController@update')->name('update-achievement');
 
+Route::get('/admin/curriculum', 'Admin\curriculumController@index');
+Route::post('/admin/createcurriculum', 'Admin\curriculumController@create')->name('create-curriculum');
+Route::get('/admin/curriculum/delete/{id}', 'Admin\curriculumController@delete')->name('delete-curriculum');
+Route::get('/admin/curriculum/find/{id}', 'Admin\curriculumController@find');
+Route::post('/admin/updatecurriculum', 'Admin\curriculumController@update')->name('update-curriculum');
+
+Route::get('/admin/service', 'Admin\serviceController@index');
+Route::get('/admin/service/delete/{id}', 'Admin\serviceController@delete')->name('delete-service');
 // WEBFRONT ROUTE
 
 Route::get('/', 'Webfront\homeController@index');
+Route::get('auth/google', 'Auth\GoogleController@redirectToGoogle');
+Route::get('auth/google/callback', 'Auth\GoogleController@handleGoogleCallback');
 Route::get('/about', 'Webfront\aboutController@index');
 Route::get('/viewnews', 'Webfront\newsController@index');
 Route::get('/viewphoto', 'Webfront\photoController@index');
@@ -121,6 +131,8 @@ Route::get('/viewcurricular', 'Webfront\curricularController@index');
 Route::get('/viewosis', 'Webfront\osisController@index');
 Route::get('/viewachievement', 'Webfront\achievementController@index');
 Route::get('/contact', 'Webfront\contactController@index');
+Route::get('/service', 'Webfront\serviceController@index');
+Route::post('/createservice', 'Webfront\serviceController@create')->name('create-service');
 
 Route::get('/detailnews/{id}', 'Webfront\newsController@detail');
 Route::get('/detailevent/{id}', 'Webfront\eventController@detail');

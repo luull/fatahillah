@@ -55,6 +55,9 @@
           <li>
             <a class="nav-link {{ Request::is('contact') ? 'active' : '' }}" href="/contact">Contact </a>
         </li>
+          <li>
+            <a class="nav-link {{ Request::is('service') ? 'active' : '' }}" href="/service">Pengaduan </a>
+        </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

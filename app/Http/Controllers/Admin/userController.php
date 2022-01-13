@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\User;
+use App\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -13,7 +13,7 @@ class userController extends Controller
         if(session('admin_data') == null){
             return redirect('/login');
         }
-        $data = User::all();
+        $data = Admin::all();
         return view('templates.admin.user', compact('data'));
     }
     public function create(Request $request)
@@ -22,11 +22,11 @@ class userController extends Controller
             'username' => 'required',
             'password' => 'required',
         ]);
-        $get = User::where('username', $request->username)->first();
+        $get = Admin::where('username', $request->username)->first();
         if($get){
             return redirect()->back()->with(['message' => 'username is already register', 'color' => 'alert-warning']);
         }else {
-            $hsl = User::create([
+            $hsl = Admin::create([
                 'username' => $request->username,
                 'password' => bcrypt($request->password)
             ]);
@@ -39,7 +39,7 @@ class userController extends Controller
     }
     public function find(Request $req)
     {
-        $hsl = User::find($req->id);
+        $hsl = Admin::find($req->id);
         if ($hsl) {
             return response()->json($hsl);
         } else {
@@ -51,11 +51,11 @@ class userController extends Controller
         $request->validate([
             'username' => 'required',
         ]);
-        $get = User::where('username', $request->username)->first();
+        $get = Admin::where('username', $request->username)->first();
         if($get){
             return redirect()->back()->with(['message' => 'username is already register', 'color' => 'alert-warning']);
         }else {
-            $hsl = User::find($request->id)->update([
+            $hsl = Admin::find($request->id)->update([
                 'username' => $request->username,
             ]);
         }
@@ -67,7 +67,7 @@ class userController extends Controller
     }
     public function delete(Request $request)
     {
-        $hsl = User::find($request->id)->delete();
+        $hsl = Admin::find($request->id)->delete();
         if($hsl){
             return redirect()->back()->with(['message' => 'user has been deleted', 'color' => 'alert-success']);
         }else{
