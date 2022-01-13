@@ -4,10 +4,10 @@
     <div class="container">
 
       <div class="d-flex justify-content-between align-items-center">
-        <h2>Photo</h2>
+        <h2>Foto</h2>
         <ol>
           <li><a href="/">Home</a></li>
-          <li>Photo</li>
+          <li>Foto</li>
         </ol>
       </div>
 
@@ -26,7 +26,6 @@
                         <h4>{{$p->title}}</h4>
                         <p>{{$p->category}}</p>
                         <a href="{{asset($p->image)}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
                       </div>
                     </div>
                     @endforeach

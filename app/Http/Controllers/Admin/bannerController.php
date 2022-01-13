@@ -37,9 +37,9 @@ class bannerController extends Controller
             'created_by' => session('admin_data')->username
         ]);
         if($hsl){
-            return redirect()->back()->with(['message' => 'banner has been created', 'color' => 'alert-success']);
+            return redirect()->back()->with(['message' => 'Data Berhasil ditambah', 'color' => 'alert-success']);
         }else{
-            return redirect()->back()->with(['message' => 'banner failed created', 'color' => 'alert-danger']);
+            return redirect()->back()->with(['message' => 'Data Gagal ditambah', 'color' => 'alert-danger']);
         }
     }
     public function find(Request $req)
@@ -73,9 +73,9 @@ class bannerController extends Controller
             'created_by' => session('admin_data')->username
         ]);
         if($hsl){
-            return redirect()->back()->with(['message' => 'banner has been updated', 'color' => 'alert-success']);
+            return redirect()->back()->with(['message' => 'Data Berhasil diubah', 'color' => 'alert-success']);
         }else{
-            return redirect()->back()->with(['message' => 'banner failed updated', 'color' => 'alert-danger']);
+            return redirect()->back()->with(['message' => 'Data Gagal diubah', 'color' => 'alert-danger']);
         }
     }
     public function delete(Request $request)
@@ -84,9 +84,9 @@ class bannerController extends Controller
         $hsl = unlink(public_path($get->image));
         if($hsl){
             Banner::find($request->id)->delete();
-            return redirect()->back()->with(['message' => 'banner has been deleted', 'color' => 'alert-success']);
+            return redirect()->back()->with(['message' => 'Data Berhasil dihapus', 'color' => 'alert-success']);
         }else{
-            return redirect()->back()->with(['message' => 'banner failed deleted', 'color' => 'alert-danger']);
+            return redirect()->back()->with(['message' => 'Data Gagal dihapus', 'color' => 'alert-danger']);
         }
     }
 }

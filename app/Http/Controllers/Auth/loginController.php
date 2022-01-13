@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Admin;
 use App\Configuration;
 use App\Http\Controllers\Controller;
-use App\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
@@ -20,7 +20,7 @@ class loginController extends Controller
             'password' => 'required|string',
         ]);
         if($validate){
-            $check = User::where('username', $request->username)->first();
+            $check = Admin::where('username', $request->username)->first();
             if($check){
                 if (Hash::check($request->password, $check->password)) {
                     $get = Configuration::first();
@@ -28,19 +28,19 @@ class loginController extends Controller
                     session(['config' => $get]);
                     return redirect('/admin/dashboard');
                 }else{
-                    return redirect()->back()->with(['message' => 'Wrong Password', 'color' => 'alert-danger']);
+                    return redirect()->back()->with(['message' => 'Kata sandi salah', 'color' => 'alert-danger']);
                 }
             }else {
-                return redirect()->back()->with(['message' => 'Wrong Username', 'color' => 'alert-danger']);
+                return redirect()->back()->with(['message' => 'Nama salah', 'color' => 'alert-danger']);
             }
         }else {
-           return redirect()->back()->with(['message' => 'Username or Password is Required', 'color' => 'alert-warning']);
+           return redirect()->back()->with(['message' => 'Nama dan Kata sandi wajib diisi', 'color' => 'alert-warning']);
         }
     }
     public function logout(Request $request)
     {
         $request->session()->flush();
-        return redirect('/login')->with(['message' => 'Logout success', 'color' => 'alert-success']);
+        return redirect('/login')->with(['message' => 'Berhasil keluar', 'color' => 'alert-success']);
     }
     public function changepass()
     {
@@ -57,29 +57,29 @@ class loginController extends Controller
         $old = $request->old_password;
         $pwd = $request->password;
         $pwd2 = $request->password1;
-        $data = User::where('username', session('admin_data')->username)->first();
-        $getid = User::where('username', session('admin_data')->username)->first()->id;
+        $data = Admin::where('username', session('admin_data')->username)->first();
+        $getid = Admin::where('username', session('admin_data')->username)->first()->id;
         if ($data) {
             if (Hash::check($old, $data->password )) {
                 if (Hash::check($pwd, $data->password )) {
-                    return redirect()->back()->with(['message' => 'Password is same', 'color' => 'alert-warning']);
+                    return redirect()->back()->with(['message' => 'Kata sandi sama', 'color' => 'alert-warning']);
                 }elseif (Hash::check($pwd2, $data->password )) {
-                    return redirect()->back()->with(['message' => 'Password is same', 'color' => 'alert-warning']);
+                    return redirect()->back()->with(['message' => 'Kata sandi sama', 'color' => 'alert-warning']);
                 }else {
                     if($pwd != $pwd2){
-                        return redirect()->back()->with(['message' => 'Password is not same', 'color' => 'alert-warning']);
+                        return redirect()->back()->with(['message' => 'Kata sandi tidak sama', 'color' => 'alert-warning']);
                     }else {
-                        $hsl = User::where('id', $getid)->update([
+                        $hsl = Admin::where('id', $getid)->update([
                             'password' => bcrypt($pwd)
                         ]);
                         if($hsl){
                             $request->session()->flush();
-                            return redirect('/login')->with(['message' => 'Change password success', 'color' => 'alert-success']);
+                            return redirect('/login')->with(['message' => 'Ubah kata sandi berhasil', 'color' => 'alert-success']);
                         }
                     }
                 }
             }else {
-                return redirect()->back()->with(['message' => 'Old Password is wrong', 'color' => 'alert-danger']);
+                return redirect()->back()->with(['message' => 'Kata sandi lama anda salah', 'color' => 'alert-danger']);
             }
         }
 

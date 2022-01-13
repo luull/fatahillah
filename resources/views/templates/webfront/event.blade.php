@@ -5,10 +5,10 @@
         <div class="container">
 
           <div class="d-flex justify-content-between align-items-center">
-            <h2>Event</h2>
+            <h2>Acara</h2>
             <ol>
               <li><a href="/">Home</a></li>
-              <li>Event</li>
+              <li>Acara</li>
             </ol>
           </div>
 
@@ -41,7 +41,7 @@
                                     <span class="card-media-body-supporting-bottom-text subtle u-float-right">{{$e->created_by}}</span>
                                 </div>
                                 <div class="card-media-body-supporting-bottom card-media-body-supporting-bottom-reveal">
-                                    <a href="/detailevent/{{$e->id}}"class="card-media-body-supporting-bottom-text card-media-link u-float-right">VIEW DETAIL</a>
+                                    <a href="/detailevent/{{$e->id}}"class="card-media-body-supporting-bottom-text card-media-link u-float-right">Lihat Selengkapnya</a>
                                 </div>
                             </div>
                         </div>

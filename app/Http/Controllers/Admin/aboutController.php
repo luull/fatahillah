@@ -37,9 +37,9 @@ class aboutController extends Controller
             'image' => $image,
         ]);
         if($hsl){
-            return redirect()->back()->with(['message' => 'Data has been updated', 'color' => 'alert-success']);
+            return redirect()->back()->with(['message' => 'Data Berhasil diubah', 'color' => 'alert-success']);
         }else{
-            return redirect()->back()->with(['message' => 'Data has been updated', 'color' => 'alert-danger']);
+            return redirect()->back()->with(['message' => 'Data Gagal diubah', 'color' => 'alert-danger']);
 
         }
 
@@ -64,7 +64,7 @@ class aboutController extends Controller
             $request->hasfile('image');
             $imageName = time().'.'.$request->image->extension();
             $request->image->move(public_path('images'), $imageName);
-            return redirect()->back()->with(['message' => 'Data has been upload', 'color' => 'alert-success']);
+            return redirect()->back()->with(['message' => 'Data Berhasil di upload', 'color' => 'alert-success']);
     }
     public function file_browse(Request $req)
     {

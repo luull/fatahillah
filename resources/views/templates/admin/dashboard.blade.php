@@ -11,7 +11,24 @@
         </nav>
     </div>
     <div class="col-xl-8 col-lg-7 col-12">
+        @if (session('message'))
+        <div class="alert {{ session('color') }} alert-dismissible fade show">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+            </button> {{ session('message') }}</div>
+        @endif
+        <div class="row">
+            <div class="col-md-4">
 
+                <img src="{{asset('default-user.jpeg')}}" class="img-fluid" alt="">
+            </div>
+            <div class="col-md-6">
+
+                <div class="alert alert-success" role="alert">
+                    <h4 class="alert-heading">Selamat datang {{session('admin_data')->username}}!</h4>
+                    <p class="text-white">Selamat datang di menu {{session('admin_data')->level == 0 ? 'Admin' : 'Super Admin'}}</p>
+                  </div>
+            </div>
+        </div>
     </div>
 </div>
 

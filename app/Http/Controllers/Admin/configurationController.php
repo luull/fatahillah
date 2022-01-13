@@ -12,6 +12,9 @@ class configurationController extends Controller
         if(session('admin_data') == null){
             return redirect('/login');
         }
+        if(session('admin_data')->level == 0){
+            return redirect()->back()->with(['message' => 'Akses tidak diperbolehkan', 'color' => 'alert-danger']);
+        }
         $data = Configuration::first();
         return view('templates.admin.configuration', compact('data'));
     }
@@ -38,13 +41,14 @@ class configurationController extends Controller
                 'ig' => $request->ig,
                 'alamat' => $request->alamat,
                 'logo' => $logo,
+                'embedmaps' => $request->embedmaps,
             ]);
             if($hsl){
                 $get = Configuration::where('id', $request->id)->first();
                 session(['config' => $get]);
-                return redirect()->back()->with(['message' => 'Data has been updated', 'color' => 'alert-success']);
+                return redirect()->back()->with(['message' => 'Data Berhasil diubah', 'color' => 'alert-success']);
             }else{
-                return redirect()->back()->with(['message' => 'Data has been updated', 'color' => 'alert-danger']);
+                return redirect()->back()->with(['message' => 'Data Berhasil diubah', 'color' => 'alert-danger']);
 
             }
 

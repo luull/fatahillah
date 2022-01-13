@@ -17,7 +17,7 @@
         @endif
         <div class="widget-content widget-content-area py-4 px-4 br-6">
            <div class="container">
-               {{-- <button class="btn btn-primary mb-4" data-toggle="modal" data-target="#addModal">Create</button> --}}
+               {{-- <button class="btn btn-primary mb-4" data-toggle="modal" data-target="#addModal">Tambah</button> --}}
                   <table id="dt-table" class="table dt-table-hover" style="width:100%">
                         <thead>
                             <tr>
@@ -26,8 +26,8 @@
                                 <th>Email</th>
                                 <th>Judul</th>
                                 <th>Isi</th>
-                                <th>Date created</th>
-                                <th>Action</th>
+                                <th>Tgl dibuat</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>

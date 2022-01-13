@@ -26,7 +26,7 @@ abstract class Job
     protected $container;
 
     /**
-     * Indicates if the job has been deleted.
+     * Indicates if the job Berhasil dihapus.
      *
      * @var bool
      */
@@ -109,7 +109,7 @@ abstract class Job
     }
 
     /**
-     * Determine if the job has been deleted.
+     * Determine if the job Berhasil dihapus.
      *
      * @return bool
      */
@@ -140,7 +140,7 @@ abstract class Job
     }
 
     /**
-     * Determine if the job has been deleted or released.
+     * Determine if the job Berhasil dihapus or released.
      *
      * @return bool
      */

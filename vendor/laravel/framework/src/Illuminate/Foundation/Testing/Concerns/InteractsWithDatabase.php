@@ -66,7 +66,7 @@ trait InteractsWithDatabase
     }
 
     /**
-     * Assert the given record has been deleted.
+     * Assert the given record Berhasil dihapus.
      *
      * @param  \Illuminate\Database\Eloquent\Model|string  $table
      * @param  array  $data

@@ -156,7 +156,7 @@ class Swift_Mime_SimpleHeaderSet implements Swift_Mime_CharsetObserver
      * Set a header in the HeaderSet.
      *
      * The header may be a previously fetched header via {@link get()} or it may
-     * be one that has been created separately.
+     * be one that Berhasil ditambah separately.
      *
      * If $index is specified, the header will be inserted into the set at this
      * offset.

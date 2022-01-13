@@ -4,10 +4,10 @@
     <div class="container">
 
       <div class="d-flex justify-content-between align-items-center">
-        <h2>Berita</h2>
+        <h2>Kurikulum</h2>
         <ol>
           <li><a href="/">Home</a></li>
-          <li>Berita</li>
+          <li>Kurikulum</li>
         </ol>
       </div>
 
@@ -20,9 +20,9 @@
             <div class="container" data-aos="fade-up">
 
               <div class="row justify-content-center">
-                @foreach ($news as $n )
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-                    <a href="/detailnews/{{$n->id}}">
+                @foreach ($curriculum as $n )
+                <div class="col-lg-12 col-md-12 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                    <a href="/detailcurriculum/{{$n->id}}">
                   <div class="member">
                     <div class="member-img">
                       <img src="{{ asset($n->image)}}" style="width:100%;height: 280px !important;" class="img-fluid" alt="">

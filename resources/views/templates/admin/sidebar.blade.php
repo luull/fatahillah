@@ -27,7 +27,7 @@
                         </div>
                     </div>
                 </a>
-                <div class="tooltip"><span>About</span></div>
+                <div class="tooltip"><span>Profil</span></div>
             </li>
             <li class="menu menu-single {{ Request::is('admin/banner') ? 'active' : '' }}">
                 <a href="/admin/banner" data-active="{{ Request::is('admin/banner') ? 'true' : '' }}" class="menu-toggle">
@@ -47,7 +47,7 @@
                         </div>
                     </div>
                 </a>
-                <div class="tooltip"><span>Content</span></div>
+                <div class="tooltip"><span>Konten</span></div>
             </li>
 
             <li class="menu menu-single {{ Request::is('admin/logo') ? 'active' : '' }}">
@@ -68,7 +68,7 @@
                         </div>
                     </div>
                 </a>
-                <div class="tooltip"><span>Photo</span></div>
+                <div class="tooltip"><span>Foto</span></div>
             </li>
             <li class="menu menu-single {{ Request::is('admin/video') ? 'active' : '' }}">
                 <a href="/admin/video" data-active="{{ Request::is('admin/video') ? 'true' : '' }}" class="menu-toggle">
@@ -80,6 +80,8 @@
                 </a>
                 <div class="tooltip"><span>Video</span></div>
             </li>
+
+            @if (session('admin_data')->level == 1)
             <li class="menu menu-single {{ Request::is('admin/user') ? 'active' : '' }}">
                 <a href="/admin/user" data-active="{{ Request::is('admin/user') ? 'true' : '' }}" class="menu-toggle">
                     <div class="base-menu">
@@ -88,7 +90,7 @@
                         </div>
                     </div>
                 </a>
-                <div class="tooltip"><span>User Management</span></div>
+                <div class="tooltip"><span>Manajemen Pengguna</span></div>
             </li>
             <li class="menu menu-single {{ Request::is('admin/service') ? 'active' : '' }}">
                 <a href="/admin/service" data-active="{{ Request::is('admin/service') ? 'true' : '' }}" class="menu-toggle">
@@ -108,8 +110,9 @@
                         </div>
                     </div>
                 </a>
-                <div class="tooltip"><span>Configuration</span></div>
+                <div class="tooltip"><span>Konfigurasi</span></div>
             </li>
+            @endif
         </ul>
 
         <div class="sidebar-bottom-actions">
@@ -130,12 +133,12 @@
                         </div>
                         <div class="dropdown-item">
                             <a href="/admin/changepass">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> <span>Change Password</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> <span>Ubah Kata sandi</span>
                             </a>
                         </div>
                         <div class="dropdown-item">
                             <a href="/logout">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg> <span>Log Out</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg> <span>Keluar</span>
                             </a>
                         </div>
 
@@ -155,10 +158,10 @@
             </div>
             <ul class="submenu-list" data-parent-element="#about">
                 <li class="{{ Request::is('admin/about') ? 'active' : '' }}">
-                    <a href="/admin/about">About us </a>
+                    <a href="/admin/about">Profil </a>
                 </li>
                 <li class="{{ Request::is('admin/teacher') ? 'active' : '' }}">
-                    <a href="/admin/teacher">Teacher Management</a>
+                    <a href="/admin/teacher">Manajemen Pemimpin</a>
                 </li>
             </ul>
         </div>

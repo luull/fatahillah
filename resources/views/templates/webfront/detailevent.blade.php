@@ -4,11 +4,11 @@
     <div class="container">
 
       <div class="d-flex justify-content-between align-items-center">
-        <h2>Detail Event</h2>
+        <h2>Detail Acara</h2>
         <ol>
           <li><a href="/">Home</a></li>
-          <li><a href="/viewevent">Event</a></li>
-          <li>Detail Event</li>
+          <li><a href="/viewevent">Acara</a></li>
+          <li>Detail Acara</li>
         </ol>
       </div>
 

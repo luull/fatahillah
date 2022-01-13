@@ -57,14 +57,14 @@ interface Job
     public function delete();
 
     /**
-     * Determine if the job has been deleted.
+     * Determine if the job Berhasil dihapus.
      *
      * @return bool
      */
     public function isDeleted();
 
     /**
-     * Determine if the job has been deleted or released.
+     * Determine if the job Berhasil dihapus or released.
      *
      * @return bool
      */

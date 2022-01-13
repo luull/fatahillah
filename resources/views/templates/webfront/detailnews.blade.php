@@ -4,11 +4,11 @@
     <div class="container">
 
       <div class="d-flex justify-content-between align-items-center">
-        <h2>Detail News</h2>
+        <h2>Detail Berita</h2>
         <ol>
           <li><a href="/">Home</a></li>
-          <li><a href="/viewnews">News</a></li>
-          <li>Detail News</li>
+          <li><a href="/viewnews">Berita</a></li>
+          <li>Detail Berita</li>
         </ol>
       </div>
 
@@ -29,7 +29,7 @@
                         <div class="post-details alt-font text-lg-left">
                             {{date('d-m-Y', strtotime($news->date_created))}}<span class="post-date"></span> <span class="post-separator">|</span>
                             <span class="post-author">
-                                    By <a href="#">{{$news->created_by}}</a>
+                                    Oleh <a href="#">{{$news->created_by}}</a>
                                 </span>
                             <span class="post-separator">|</span>
 

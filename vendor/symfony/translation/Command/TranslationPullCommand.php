@@ -167,7 +167,7 @@ EOF
                 $this->writer->write($operation->getResult(), $format, $writeOptions);
             }
 
-            $io->success(sprintf('Local translations has been updated from "%s" (for "%s" locale(s), and "%s" domain(s)).', parse_url($provider, \PHP_URL_SCHEME), implode(', ', $locales), implode(', ', $domains)));
+            $io->success(sprintf('Local translations Berhasil diubah from "%s" (for "%s" locale(s), and "%s" domain(s)).', parse_url($provider, \PHP_URL_SCHEME), implode(', ', $locales), implode(', ', $domains)));
 
             return 0;
         }

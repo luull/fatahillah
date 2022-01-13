@@ -2630,7 +2630,7 @@ EOT;
      9000  2003 November*
     10000  2004 January*
 
-    The Project Gutenberg Literary Archive Foundation has been created
+    The Project Gutenberg Literary Archive Foundation Berhasil ditambah
     to secure a future for Project Gutenberg into the next millennium.
 
     We need your donations more than ever!

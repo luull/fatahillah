@@ -36,9 +36,9 @@ class newsController extends Controller
             'created_by' => session('admin_data')->username
         ]);
         if($hsl){
-            return redirect()->back()->with(['message' => 'news has been created', 'color' => 'alert-success']);
+            return redirect()->back()->with(['message' => 'Berita Berhasil ditambah', 'color' => 'alert-success']);
         }else{
-            return redirect()->back()->with(['message' => 'news failed created', 'color' => 'alert-danger']);
+            return redirect()->back()->with(['message' => 'Berita Gagal ditambah', 'color' => 'alert-danger']);
         }
     }
     public function find(Request $req)
@@ -71,9 +71,9 @@ class newsController extends Controller
             'image' => $image,
         ]);
         if($hsl){
-            return redirect()->back()->with(['message' => 'news has been updated', 'color' => 'alert-success']);
+            return redirect()->back()->with(['message' => 'Berita Berhasil diubah', 'color' => 'alert-success']);
         }else{
-            return redirect()->back()->with(['message' => 'news failed updated', 'color' => 'alert-danger']);
+            return redirect()->back()->with(['message' => 'Berita Gagal diubah', 'color' => 'alert-danger']);
         }
     }
     public function delete(Request $request)
@@ -82,9 +82,9 @@ class newsController extends Controller
         $hsl = unlink(public_path($get->image));
         if($hsl){
             News::find($request->id)->delete();
-            return redirect()->back()->with(['message' => 'news has been deleted', 'color' => 'alert-success']);
+            return redirect()->back()->with(['message' => 'Berita Berhasil dihapus', 'color' => 'alert-success']);
         }else{
-            return redirect()->back()->with(['message' => 'news failed deleted', 'color' => 'alert-danger']);
+            return redirect()->back()->with(['message' => 'Berita Gagal dihapus', 'color' => 'alert-danger']);
         }
     }
 }

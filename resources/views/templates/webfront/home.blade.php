@@ -111,8 +111,8 @@
     <div class="container" data-aos="fade-up">
 
       <div class="section-title">
-        <h2>About</h2>
-        <h3>Our <span>About Us</span></h3>
+        <h2>Profil</h2>
+        <h3><span>Profil</span></h3>
 
       </div>
 
@@ -126,8 +126,8 @@
             {!! Str::limit($about->body, 400,'...') !!}
           </p>
           <div class="row">
-            <div class="col-md-4">
-                <a href="/about" class="btn btn-custom scrollto">View Detail</a>
+            <div class="col-md-6">
+                <a href="/about" class="btn btn-custom scrollto">Lihat Selengkapnya</a>
             </div>
           </div>
         </div>
@@ -140,8 +140,8 @@
     <div class="container" data-aos="fade-up">
 
       <div class="section-title">
-        <h2>News</h2>
-        <h3>Our <span>News</span></h3>
+        <h2>Berita</h2>
+        <h3>Berita</span></h3>
 
       </div>
 
@@ -174,8 +174,8 @@
         <div class="container blog-container">
             <div class="row justify-content-center">
                 <div class="section-title">
-                    <h2>Event</h2>
-                    <h3>Check our <span>Event</span></h3>
+                    <h2>Acara</h2>
+                    <h3><span>Acara</span></h3>
 
                   </div>
 
@@ -200,7 +200,7 @@
                                 <span class="card-media-body-supporting-bottom-text subtle u-float-right">{{$e->created_by}}</span>
                             </div>
                             <div class="card-media-body-supporting-bottom card-media-body-supporting-bottom-reveal">
-                                <a href="/detailevent/{{$e->id}}" class="card-media-body-supporting-bottom-text card-media-link u-float-right">VIEW DETAIL</a>
+                                <a href="/detailevent/{{$e->id}}" class="card-media-body-supporting-bottom-text card-media-link u-float-right">Lihat Selengkapnya</a>
                             </div>
                         </div>
                     </div>
@@ -215,8 +215,8 @@
     <div class="container" data-aos="fade-up">
 
       <div class="section-title">
-        <h2>Photo</h2>
-        <h3>Check our <span>Photo</span></h3>
+        <h2>Foto</h2>
+        <h3>Galeri <span>Foto</span></h3>
 
       </div>
 
@@ -228,7 +228,6 @@
             <h4>{{$p->title}}</h4>
             <p>{{$p->category}}</p>
             <a href="{{asset($p->image)}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
           </div>
         </div>
         @endforeach
@@ -242,7 +241,7 @@
         <div class="row">
             <div class="section-title">
                 <h2>Video</h2>
-                <h3>Check our <span>Video</span></h3>
+                <h3>Galeri <span>Video</span></h3>
 
               </div>
 

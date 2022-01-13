@@ -15,7 +15,7 @@
  })
 </script>
 
-<h5 class="text-center">File Browse <span class="text-danger">{{$r_path}}</span> Directory</h5>
+<h5 class="text-center">Direktori <span class="text-danger">{{$r_path}}</span></h5>
     <div class='row justify-content-center'>
     <?PHP $x=0;?>
     @foreach($files as $filename)

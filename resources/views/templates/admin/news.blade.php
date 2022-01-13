@@ -5,7 +5,7 @@
         <nav class="breadcrumb-one" aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/dashboard"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></a></li>
-                <li class="breadcrumb-item active" aria-current="page"><span>News</span></li>
+                <li class="breadcrumb-item active" aria-current="page"><span>Berita</span></li>
             </ol>
         </nav>
     </div>
@@ -17,16 +17,16 @@
         @endif
         <div class="widget-content widget-content-area py-4 px-4 br-6">
            <div class="container">
-               <button class="btn btn-primary mb-4" data-toggle="modal" data-target="#addModal">Create</button>
+               <button class="btn btn-primary mb-4" data-toggle="modal" data-target="#addModal">Tambah</button>
                   <table id="dt-table" class="table dt-table-hover" style="width:100%">
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Title</th>
-                                <th>Date created</th>
-                                <th>Created by</th>
-                                <th>Image</th>
-                                <th>Action</th>
+                                <th>Judul</th>
+                                <th>Tgl dibuat</th>
+                                <th>Pembuat</th>
+                                <th>Gambar</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -56,7 +56,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="addModalLabel">Create news</h5>
+                <h5 class="modal-title" id="addModalLabel">Tambah Berita</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <i data-feather="close"></i>
                 </button>
@@ -67,31 +67,31 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label>Title</label>
+                                <label>Judul</label>
                                 <input type="text" class="form-control" name="title">
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label>Body</label>
+                                <label>Isi</label>
                                 <textarea id="body" class="form-control" name="body" rows="10" cols="50"></textarea>
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <label>Image</label>
-                            <span class="text-danger">* max size 2mb</span>
+                            <label>Gambar</label>
+                            <span class="text-danger">* batas ukuran 2mb</span>
                             <input type="file" class="form-control" name="image">
                             @error('image')
                             <br>
-                            <div class="text-danger mt-1">The Image does not match the Requirements</div>
+                            <div class="text-danger mt-1">Gambar tidak sesuai dengan ketentuan</div>
                             @enderror
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Discard</button>
-                    <button type="submit" class="btn btn-primary">Create</button>
+                    <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Batal</button>
+                    <button type="submit" class="btn btn-primary">Tambah</button>
                 </div>
             </form>
         </div>
@@ -102,7 +102,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="editModalLabel">Edit news</h5>
+                <h5 class="modal-title" id="editModalLabel">Ubah Berita</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <i data-feather="close"></i>
                 </button>
@@ -114,36 +114,36 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label>Title</label>
+                                <label>Judul</label>
                                 <input type="text" id="edit_title" class="form-control" name="title">
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label>Body</label>
+                                <label>Isi</label>
                                 <textarea id="editbody" class="form-control edit_body" name="body" rows="10" cols="50"></textarea>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label>Image</label>
-                                <span class="text-danger">* max size 2mb</span>
+                                <label>Gambar</label>
+                                <span class="text-danger">* batas ukuran 2mb</span>
                                 <br><img src="" class="img img-thumbnail" id="image_view" style="max-width:200px">
                                 <br><input type="text" class="form-control input-default" id="image_edit" name="default" hidden>
 
                                 <input type="file" class="form-control input-default" name="image">
                                 @error('image')
                                 <br>
-                                <div class="text-danger mt-1">The Image does not match the Requirements</div>
+                                <div class="text-danger mt-1">Gambar tidak sesuai dengan ketentuan</div>
                                 @enderror
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Discard</button>
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Batal</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
             </form>
         </div>

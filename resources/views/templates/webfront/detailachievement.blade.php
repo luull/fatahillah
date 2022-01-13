@@ -29,7 +29,7 @@
                         <div class="post-details alt-font text-lg-left">
                             {{date('d-m-Y', strtotime($achievement->date_created))}}<span class="post-date"></span> <span class="post-separator">|</span>
                             <span class="post-author">
-                                    By <a href="#">{{$achievement->created_by}}</a>
+                                    Oleh <a href="#">{{$achievement->created_by}}</a>
                                 </span>
                             <span class="post-separator">|</span>
 

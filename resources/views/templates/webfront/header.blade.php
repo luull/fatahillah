@@ -26,9 +26,19 @@
             <li>
                 <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">Beranda</a>
             </li>
-            <li>
+            <li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                    <li><i class="lni-angle-double-right right-arrow"></i><a class="{{ Request::is('about') ? 'active' : '' }}" href="/about">Profil</a></li>
+                    <li><i class="lni-angle-double-right right-arrow"></i><a href="/about#visi">Visi</a></li>
+                    <li><i class="lni-angle-double-right right-arrow"></i><a href="/about#misi">Misi</a></li>
+                    <li><i class="lni-angle-double-right right-arrow"></i><a href="/about#pimpinan">Struktur Kepemimpinan</a></li>
+                    <li><i class="lni-angle-double-right right-arrow"></i><a href="/about#cards">Staff</a></li>
+                    <li><i class="lni-angle-double-right right-arrow"></i><a href="/about#sarana">Sarana dan Prasarana</a></li>
+                </ul>
+              </li>
+            {{-- <li>
                 <a class="nav-link {{ Request::is('about') ? 'active' : '' }}"  href="/about">Profil</a>
-            </li>
+            </li> --}}
             <li>
                 <a class="nav-link {{ Request::is('viewprogram') ? 'active' : '' }}"  href="/viewprogram">Program</a>
             </li>
@@ -40,23 +50,26 @@
                 </ul>
               </li>
             <li>
-                <a class="nav-link {{ Request::is('viewevent') ? 'active' : '' }}"  href="/viewevent">Event</a>
+                <a class="nav-link {{ Request::is('viewcurriculum') ? 'active' : '' }}"  href="/viewcurriculum">Kurikulum</a>
             </li>
             <li>
-                <a class="nav-link {{ Request::is('viewnews') ? 'active' : '' }}"  href="/viewnews">News</a>
+                <a class="nav-link {{ Request::is('viewevent') ? 'active' : '' }}"  href="/viewevent">Acara</a>
+            </li>
+            <li>
+                <a class="nav-link {{ Request::is('viewnews') ? 'active' : '' }}"  href="/viewnews">Berita</a>
             </li>
 
-          <li class="dropdown"><a href="#"><span>Gallery</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="#"><span>Galeri</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-                <li><i class="lni-angle-double-right right-arrow"></i><a class="{{ Request::is('viewphoto') ? 'active' : '' }}" href="/viewphoto">Photo</a></li>
+                <li><i class="lni-angle-double-right right-arrow"></i><a class="{{ Request::is('viewphoto') ? 'active' : '' }}" href="/viewphoto">Foto</a></li>
                 <li><i class="lni-angle-double-right right-arrow"></i><a class="{{ Request::is('viewvideo') ? 'active' : '' }}" href="/viewvideo">Video</a></li>
             </ul>
           </li>
           <li>
-            <a class="nav-link {{ Request::is('contact') ? 'active' : '' }}" href="/contact">Contact </a>
+            <a class="nav-link {{ Request::is('service') ? 'active' : '' }}" href="/service">Pengaduan </a>
         </li>
           <li>
-            <a class="nav-link {{ Request::is('service') ? 'active' : '' }}" href="/service">Pengaduan </a>
+            <a class="nav-link {{ Request::is('contact') ? 'active' : '' }}" href="/contact">Kontak </a>
         </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

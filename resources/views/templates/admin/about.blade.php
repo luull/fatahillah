@@ -5,7 +5,7 @@
         <nav class="breadcrumb-one" aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/dashboard"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></a></li>
-                <li class="breadcrumb-item active" aria-current="page"><span>About</span></li>
+                <li class="breadcrumb-item active" aria-current="page"><span>Profil</span></li>
             </ol>
         </nav>
     </div>
@@ -17,7 +17,7 @@
                       <div class="row">
                           <div class="col-md-6">
                               <label>Upload</label>
-                              <span class="text-danger">* max size 2mb</span>
+                              <span class="text-danger">* batas ukuran 2mb</span>
                               <div class="input-group mb-3">
                                   <input type="file" class="form-control" name="image">
                                 <div class="input-group-append">
@@ -25,7 +25,7 @@
                                 </div>
                                 @error('image')
                                 <br>
-                                <div class="text-danger mt-1">The Image does not match the Requirements</div>
+                                <div class="text-danger mt-1">Gambar tidak sesuai dengan ketentuan</div>
                                 @enderror
                               </div>
 
@@ -43,48 +43,48 @@
                 <input type="text" value="{{$data->id}}" name="id" hidden>
                 <div class="row">
                     <div class="col-md-4">
-                        <label>Image</label>
+                        <label>Gambar</label>
                         @if($data->image != null)
-                        <span class="text-danger">* max size 2mb</span>
+                        <span class="text-danger">* batas ukuran 2mb</span>
                         <hr>
                         <img src="{{ asset($data->image)}}" class="img-fluid" alt="">
                         <input type="file" class="form-control" name="image">
                         <input type="text" value="{{$data->image}}" name="default" hidden>
                         @error('image')
                         <br>
-                        <div class="text-danger mt-1">The Image does not match the Requirements</div>
+                        <div class="text-danger mt-1">Gambar tidak sesuai dengan ketentuan</div>
                         @enderror
                         @else
-                        <span class="text-danger">* max size 2mb</span>
+                        <span class="text-danger">* batas ukuran 2mb</span>
                         <hr>
                         <img src="{{ asset('default-image.png')}}" class="img-fluid" alt="">
                         <input type="file" class="form-control" name="image">
                         @error('image')
                         <br>
-                        <div class="text-danger mt-1">The Image does not match the Requirements</div>
+                        <div class="text-danger mt-1">Gambar tidak sesuai dengan ketentuan</div>
                         @enderror
                         @endif
                     </div>
                     <div class="col-md-8">
                         <hr class="mt-5">
                         <div class="form-group">
-                            <label>Title</label>
+                            <label>Judul</label>
                             <input type="text" class="form-control" name="title" value="{{$data->title}}">
                         </div>
                         <div class="form-group">
-                            <label>Body</label>
+                            <label>Isi</label>
                             <textarea id="body" class="form-control" name="body" rows="10" cols="50">{!! $data->body !!}</textarea>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Vission</label>
+                                    <label>Visi</label>
                                     <textarea id="vission" class="form-control" name="vission" rows="6" cols="30">{!! $data->vission !!}</textarea>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Mission</label>
+                                    <label>Visi</label>
                                     <textarea id="mission" class="form-control" name="mission" rows="6" cols="30">{!! $data->mission !!}</textarea>
                                 </div>
                             </div>
@@ -94,7 +94,7 @@
                             <textarea id="sarana" class="form-control" name="sarana" rows="10" cols="50">{!! $data->sarana !!}</textarea>
                         </div>
                         <hr>
-                        <button class="btn btn-success btn-block" type="submit">Save</button>
+                        <button class="btn btn-success btn-block" type="submit">Simpan</button>
                     </div>
                 </div>
             </form>

@@ -40,9 +40,9 @@ class eventController extends Controller
             'created_by' => session('admin_data')->username
         ]);
         if($hsl){
-            return redirect()->back()->with(['message' => 'Event has been created', 'color' => 'alert-success']);
+            return redirect()->back()->with(['message' => 'Acara Berhasil ditambah', 'color' => 'alert-success']);
         }else{
-            return redirect()->back()->with(['message' => 'Event failed created', 'color' => 'alert-danger']);
+            return redirect()->back()->with(['message' => 'Acara Gagal ditambah', 'color' => 'alert-danger']);
         }
     }
     public function find(Request $req)
@@ -79,9 +79,9 @@ class eventController extends Controller
             'image' => $image,
         ]);
         if($hsl){
-            return redirect()->back()->with(['message' => 'Event has been updated', 'color' => 'alert-success']);
+            return redirect()->back()->with(['message' => 'Acara Berhasil diubah', 'color' => 'alert-success']);
         }else{
-            return redirect()->back()->with(['message' => 'Event failed updated', 'color' => 'alert-danger']);
+            return redirect()->back()->with(['message' => 'Acara Gagal diubah', 'color' => 'alert-danger']);
         }
     }
     public function delete(Request $request)
@@ -90,9 +90,9 @@ class eventController extends Controller
         $hsl = unlink(public_path($get->image));
         if($hsl){
             Event::find($request->id)->delete();
-            return redirect()->back()->with(['message' => 'Event has been deleted', 'color' => 'alert-success']);
+            return redirect()->back()->with(['message' => 'Acara Berhasil dihapus', 'color' => 'alert-success']);
         }else{
-            return redirect()->back()->with(['message' => 'Event failed deleted', 'color' => 'alert-danger']);
+            return redirect()->back()->with(['message' => 'Acara Gagal dihapus', 'color' => 'alert-danger']);
         }
     }
 }

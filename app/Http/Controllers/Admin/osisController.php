@@ -36,9 +36,9 @@ class osisController extends Controller
             'created_by' => session('admin_data')->username
         ]);
         if($hsl){
-            return redirect()->back()->with(['message' => 'osis has been created', 'color' => 'alert-success']);
+            return redirect()->back()->with(['message' => 'Data Berhasil ditambah', 'color' => 'alert-success']);
         }else{
-            return redirect()->back()->with(['message' => 'osis failed created', 'color' => 'alert-danger']);
+            return redirect()->back()->with(['message' => 'Data Gagal ditambah', 'color' => 'alert-danger']);
         }
     }
     public function find(Request $req)
@@ -71,9 +71,9 @@ class osisController extends Controller
             'image' => $image,
         ]);
         if($hsl){
-            return redirect()->back()->with(['message' => 'osis has been updated', 'color' => 'alert-success']);
+            return redirect()->back()->with(['message' => 'Data Berhasil diubah', 'color' => 'alert-success']);
         }else{
-            return redirect()->back()->with(['message' => 'osis failed updated', 'color' => 'alert-danger']);
+            return redirect()->back()->with(['message' => 'Data Gagal diubah', 'color' => 'alert-danger']);
         }
     }
     public function delete(Request $request)
@@ -82,9 +82,9 @@ class osisController extends Controller
         $hsl = unlink(public_path($get->image));
         if($hsl){
             Osis::find($request->id)->delete();
-            return redirect()->back()->with(['message' => 'osis has been deleted', 'color' => 'alert-success']);
+            return redirect()->back()->with(['message' => 'Data Berhasil dihapus', 'color' => 'alert-success']);
         }else{
-            return redirect()->back()->with(['message' => 'osis failed deleted', 'color' => 'alert-danger']);
+            return redirect()->back()->with(['message' => 'Data Gagal dihapus', 'color' => 'alert-danger']);
         }
     }
 }

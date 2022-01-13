@@ -130,6 +130,7 @@ Route::get('/viewprogram', 'Webfront\programController@index');
 Route::get('/viewcurricular', 'Webfront\curricularController@index');
 Route::get('/viewosis', 'Webfront\osisController@index');
 Route::get('/viewachievement', 'Webfront\achievementController@index');
+Route::get('/viewcurriculum', 'Webfront\curriculumController@index');
 Route::get('/contact', 'Webfront\contactController@index');
 Route::get('/service', 'Webfront\serviceController@index');
 Route::post('/createservice', 'Webfront\serviceController@create')->name('create-service');
@@ -140,4 +141,5 @@ Route::get('/detailprogram/{id}', 'Webfront\programController@detail');
 Route::get('/detailcurricular/{id}', 'Webfront\curricularController@detail');
 Route::get('/detailosis/{id}', 'Webfront\osisController@detail');
 Route::get('/detailachievement/{id}', 'Webfront\achievementController@detail');
+Route::get('/detailcurriculum/{id}', 'Webfront\curriculumController@detail');
 

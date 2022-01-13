@@ -29,7 +29,7 @@
                         <div class="post-details alt-font text-lg-left">
                             {{date('d-m-Y', strtotime($program->date_created))}}<span class="post-date"></span> <span class="post-separator">|</span>
                             <span class="post-author">
-                                    By <a href="#">{{$program->created_by}}</a>
+                                    Oleh <a href="#">{{$program->created_by}}</a>
                                 </span>
                             <span class="post-separator">|</span>
 

@@ -970,7 +970,7 @@ abstract class Model implements Arrayable, ArrayAccess, Jsonable, JsonSerializab
 
         $this->performDeleteOnModel();
 
-        // Once the model has been deleted, we will fire off the deleted event so that
+        // Once the model Berhasil dihapus, we will fire off the deleted event so that
         // the developers may hook into post-delete operations. We will then return
         // a boolean true as the delete is presumably successful on the database.
         $this->fireModelEvent('deleted', false);

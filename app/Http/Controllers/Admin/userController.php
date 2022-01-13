@@ -13,6 +13,9 @@ class userController extends Controller
         if(session('admin_data') == null){
             return redirect('/login');
         }
+        if(session('admin_data')->level == 0){
+            return redirect()->back()->with(['message' => 'Akses tidak diperbolehkan', 'color' => 'alert-danger']);
+        }
         $data = Admin::all();
         return view('templates.admin.user', compact('data'));
     }
@@ -21,20 +24,22 @@ class userController extends Controller
         $request->validate([
             'username' => 'required',
             'password' => 'required',
+            'level' => 'required',
         ]);
         $get = Admin::where('username', $request->username)->first();
         if($get){
-            return redirect()->back()->with(['message' => 'username is already register', 'color' => 'alert-warning']);
+            return redirect()->back()->with(['message' => 'Nama sudah terdaftar', 'color' => 'alert-warning']);
         }else {
             $hsl = Admin::create([
                 'username' => $request->username,
-                'password' => bcrypt($request->password)
+                'password' => bcrypt($request->password),
+                'level' => $request->level,
             ]);
         }
         if($hsl){
-            return redirect()->back()->with(['message' => 'user has been created', 'color' => 'alert-success']);
+            return redirect()->back()->with(['message' => 'Data Berhasil ditambah', 'color' => 'alert-success']);
         }else{
-            return redirect()->back()->with(['message' => 'user failed created', 'color' => 'alert-danger']);
+            return redirect()->back()->with(['message' => 'Data Gagal ditambah', 'color' => 'alert-danger']);
         }
     }
     public function find(Request $req)
@@ -50,28 +55,25 @@ class userController extends Controller
     {
         $request->validate([
             'username' => 'required',
+            'level' => 'required',
         ]);
-        $get = Admin::where('username', $request->username)->first();
-        if($get){
-            return redirect()->back()->with(['message' => 'username is already register', 'color' => 'alert-warning']);
-        }else {
             $hsl = Admin::find($request->id)->update([
                 'username' => $request->username,
+                'level' => $request->level,
             ]);
-        }
         if($hsl){
-            return redirect()->back()->with(['message' => 'user has been updated', 'color' => 'alert-success']);
+            return redirect()->back()->with(['message' => 'Data Berhasil diubah', 'color' => 'alert-success']);
         }else{
-            return redirect()->back()->with(['message' => 'user failed updated', 'color' => 'alert-danger']);
+            return redirect()->back()->with(['message' => 'Data Gagal diubah', 'color' => 'alert-danger']);
         }
     }
     public function delete(Request $request)
     {
         $hsl = Admin::find($request->id)->delete();
         if($hsl){
-            return redirect()->back()->with(['message' => 'user has been deleted', 'color' => 'alert-success']);
+            return redirect()->back()->with(['message' => 'Data Berhasil dihapus', 'color' => 'alert-success']);
         }else{
-            return redirect()->back()->with(['message' => 'user failed deleted', 'color' => 'alert-danger']);
+            return redirect()->back()->with(['message' => 'Data Gagal dihapus', 'color' => 'alert-danger']);
         }
     }
 }

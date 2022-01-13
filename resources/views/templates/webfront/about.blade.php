@@ -31,10 +31,10 @@
         <div class="container">
 
           <div class="d-flex justify-content-between align-items-center">
-            <h2>About</h2>
+            <h2>Profil</h2>
             <ol>
               <li><a href="index.html">Home</a></li>
-              <li>About</li>
+              <li>Profil</li>
             </ol>
           </div>
 
@@ -54,19 +54,19 @@
                         <h2 class="gradient-text1 pb-3">{{$about->title}}</h2>
                         <p>{!!$about->body!!}</p>
                         <div class="row">
-                            <div class="col-md-6">
-                                <p><b>Vission</b></p>
+                            <div class="col-md-6" id="visi">
+                                <p><b>Visi</b></p>
                                 <p>{!! $about->vission !!}</p>
                             </div>
-                            <div class="col-md-6">
-                                <p><b>Mission</b></p>
+                            <div class="col-md-6" id="misi">
+                                <p><b>Misi</b></p>
                                 <p>{!! $about->mission !!}</p>
                             </div>
                         </div>
 
                 </div>
                 <div class="col-md-12">
-                    <section id="team" class="team">
+                    <section id="pimpinan" class="team">
                         <div class="container" data-aos="fade-up">
 
                           <div class="section-title mb-3">
@@ -128,7 +128,7 @@
                     </section>
                 </div>
                 <div class="col-md-12">
-                    <section id="team" class="team">
+                    <section id="sarana" class="team">
                         <div class="container" data-aos="fade-up">
 
                           <div class="section-title mb-3">

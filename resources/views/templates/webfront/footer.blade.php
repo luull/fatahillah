@@ -15,12 +15,11 @@
             <div class="col-lg-3 col-md-6 footer-links" data-aos="fade-bottom" data-aos-delay="100">
                 <h4>Layanan</h4>
                 <ul>
-                    <li><i class="bx bx-chevron-right"></i> <a href="/about"> About us</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="/event"> Event</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="/news"> News</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="/photo"> Photo</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="/video"> Video</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="/contact"> Contact</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="/about"> Profil</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="/viewprogram"> Program</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="/viewcurriculum"> Kurikulum</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="/service"> Pengaduan</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="/contact"> Kontak</a></li>
                 </ul>
             </div>
 

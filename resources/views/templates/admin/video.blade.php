@@ -17,17 +17,17 @@
         @endif
         <div class="widget-content widget-content-area py-4 px-4 br-6">
            <div class="container">
-               <button class="btn btn-primary mb-4" data-toggle="modal" data-target="#addModal">Create</button>
+               <button class="btn btn-primary mb-4" data-toggle="modal" data-target="#addModal">Tambah</button>
                   <table id="dt-table" class="table dt-table-hover" style="width:100%">
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Title</th>
-                                <th>Category</th>
+                                <th>Judul</th>
+                                <th>Kategori</th>
                                 <th>Link</th>
-                                <th>Date created</th>
-                                <th>Created by</th>
-                                <th>Action</th>
+                                <th>Tgl dibuat</th>
+                                <th>Pembuat</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -58,7 +58,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="addModalLabel">Create video</h5>
+                <h5 class="modal-title" id="addModalLabel">Tambah video</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <i data-feather="close"></i>
                 </button>
@@ -69,11 +69,11 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label>Title</label>
+                                <label>Judul</label>
                                 <input type="text" class="form-control" name="title">
                             </div>
                             <div class="form-group">
-                                <label>Category</label>
+                                <label>Kategori</label>
                                 <input type="text" class="form-control" name="category">
                             </div>
                         </div>
@@ -89,8 +89,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Discard</button>
-                    <button type="submit" class="btn btn-primary">Create</button>
+                    <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Batal</button>
+                    <button type="submit" class="btn btn-primary">Tambah</button>
                 </div>
             </form>
         </div>
@@ -101,7 +101,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="editModalLabel">Edit video</h5>
+                <h5 class="modal-title" id="editModalLabel">Ubah video</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <i data-feather="close"></i>
                 </button>
@@ -113,11 +113,11 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label>Title</label>
+                                <label>Judul</label>
                                 <input type="text" id="edit_title" class="form-control" name="title">
                             </div>
                             <div class="form-group">
-                                <label>Category</label>
+                                <label>Kategori</label>
                                 <input type="text" id="edit_category" class="form-control" name="category">
                             </div>
                         </div>
@@ -134,8 +134,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Discard</button>
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Batal</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
             </form>
         </div>

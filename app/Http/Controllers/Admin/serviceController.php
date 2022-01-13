@@ -13,6 +13,9 @@ class serviceController extends Controller
         if(session('admin_data') == null){
             return redirect('/login');
         }
+        if(session('admin_data')->level == 0){
+            return redirect()->back()->with(['message' => 'Akses tidak diperbolehkan', 'color' => 'alert-danger']);
+        }
         $data = Service::all();
         return view('templates.admin.service', compact('data'));
     }
@@ -20,9 +23,9 @@ class serviceController extends Controller
     {
         $hsl = Service::find($request->id)->delete();
         if($hsl){
-            return redirect()->back()->with(['message' => 'service has been deleted', 'color' => 'alert-success']);
+            return redirect()->back()->with(['message' => 'Data Berhasil dihapus', 'color' => 'alert-success']);
         }else{
-            return redirect()->back()->with(['message' => 'service failed deleted', 'color' => 'alert-danger']);
+            return redirect()->back()->with(['message' => 'Data Gagal dihapus', 'color' => 'alert-danger']);
         }
     }
 }
