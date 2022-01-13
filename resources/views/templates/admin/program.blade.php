@@ -5,7 +5,7 @@
         <nav class="breadcrumb-one" aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/dashboard"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></a></li>
-                <li class="breadcrumb-item active" aria-current="page"><span>News</span></li>
+                <li class="breadcrumb-item active" aria-current="page"><span>Program</span></li>
             </ol>
         </nav>
     </div>
@@ -41,7 +41,7 @@
                                 <td><img src="{{ asset($d->image) }}" style="max-height: 70px;" alt=""></td>
                                 <td>
                                     <a href="#" class="edit" id="e-{{$d->id}}" alt="Edit"><i data-feather="edit"></i></a>
-                                    <a href="/admin/news/delete/{{$d->id}}" alt="Delete"><i data-feather="trash" class="text-danger"></i></a>
+                                    <a href="/admin/program/delete/{{$d->id}}" alt="Delete"><i data-feather="trash" class="text-danger"></i></a>
                                 </td>
                             </tr>
                             @endforeach
@@ -56,12 +56,12 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="addModalLabel">Create news</h5>
+                <h5 class="modal-title" id="addModalLabel">Create program</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <i data-feather="close"></i>
                 </button>
             </div>
-            <form action="{{ route('create-news') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('create-program') }}" method="POST" enctype="multipart/form-data">
               @csrf
                 <div class="modal-body">
                     <div class="row">
@@ -102,12 +102,12 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="editModalLabel">Edit news</h5>
+                <h5 class="modal-title" id="editModalLabel">Edit program</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <i data-feather="close"></i>
                 </button>
             </div>
-            <form action="{{ route('update-news') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('update-program') }}" method="POST" enctype="multipart/form-data">
               @csrf
               <input type="text" name="id" id="edit_id" hidden>
                 <div class="modal-body">
@@ -169,7 +169,7 @@
             $.ajax({
                 type:'get',
                 method:'get',
-                url:'/admin/news/find/'  + id ,
+                url:'/admin/program/find/'  + id ,
                 data:'_token = <?php echo csrf_token() ?>'   ,
                 success:function(hsl) {
                    if (hsl.error){

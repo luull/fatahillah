@@ -127,6 +127,21 @@
                         </div>
                     </section>
                 </div>
+                <div class="col-md-12">
+                    <section id="team" class="team">
+                        <div class="container" data-aos="fade-up">
+
+                          <div class="section-title mb-3">
+                            <h3>Sarana dan <span>Prasarana</span></h3>
+                          </div>
+                          <div class="row justify-content-center">
+                              <div class="col-md-12">
+                                  {!!$about->sarana!!}
+                              </div>
+                          </div>
+                        </div>
+                    </section>
+                </div>
             </div>
         </div>
 </div>

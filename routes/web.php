@@ -28,6 +28,9 @@ Route::post('/admin/updateconfig', 'Admin\configurationController@update')->name
 
 Route::get('/admin/about', 'Admin\aboutController@index');
 Route::post('/admin/updateabout', 'Admin\aboutController@update')->name('update-about');
+Route::post('ckeditor/upload', 'Admin\aboutController@upload')->name('ckeditor.upload');
+Route::get('/admin/file_browse', 'Admin\aboutController@file_browse');
+Route::post('/admin/uploadfile', 'Admin\aboutController@uploadfile')->name('upload-file');
 
 Route::get('/admin/event', 'Admin\eventController@index');
 Route::post('/admin/createevent', 'Admin\eventController@create')->name('create-event');
@@ -81,6 +84,29 @@ Route::post('/admin/updateuser', 'Admin\userController@update')->name('update-us
 Route::get('/admin/changepass', 'Auth\loginController@changepass');
 Route::post('/admin/changepass', 'Auth\loginController@proseschange')->name('change-password');
 
+Route::get('/admin/program', 'Admin\programController@index');
+Route::post('/admin/createprogram', 'Admin\programController@create')->name('create-program');
+Route::get('/admin/program/delete/{id}', 'Admin\programController@delete')->name('delete-program');
+Route::get('/admin/program/find/{id}', 'Admin\programController@find');
+Route::post('/admin/updateprogram', 'Admin\programController@update')->name('update-program');
+
+Route::get('/admin/curricular', 'Admin\curricularController@index');
+Route::post('/admin/createcurricular', 'Admin\curricularController@create')->name('create-curricular');
+Route::get('/admin/curricular/delete/{id}', 'Admin\curricularController@delete')->name('delete-curricular');
+Route::get('/admin/curricular/find/{id}', 'Admin\curricularController@find');
+Route::post('/admin/updatecurricular', 'Admin\curricularController@update')->name('update-curricular');
+
+Route::get('/admin/osis', 'Admin\osisController@index');
+Route::post('/admin/createosis', 'Admin\osisController@create')->name('create-osis');
+Route::get('/admin/osis/delete/{id}', 'Admin\osisController@delete')->name('delete-osis');
+Route::get('/admin/osis/find/{id}', 'Admin\osisController@find');
+Route::post('/admin/updateosis', 'Admin\osisController@update')->name('update-osis');
+
+Route::get('/admin/achievement', 'Admin\achievementController@index');
+Route::post('/admin/createachievement', 'Admin\achievementController@create')->name('create-achievement');
+Route::get('/admin/achievement/delete/{id}', 'Admin\achievementController@delete')->name('delete-achievement');
+Route::get('/admin/achievement/find/{id}', 'Admin\achievementController@find');
+Route::post('/admin/updateachievement', 'Admin\achievementController@update')->name('update-achievement');
 
 // WEBFRONT ROUTE
 
@@ -90,8 +116,16 @@ Route::get('/viewnews', 'Webfront\newsController@index');
 Route::get('/viewphoto', 'Webfront\photoController@index');
 Route::get('/viewvideo', 'Webfront\videoController@index');
 Route::get('/viewevent', 'Webfront\eventController@index');
+Route::get('/viewprogram', 'Webfront\programController@index');
+Route::get('/viewcurricular', 'Webfront\curricularController@index');
+Route::get('/viewosis', 'Webfront\osisController@index');
+Route::get('/viewachievement', 'Webfront\achievementController@index');
 Route::get('/contact', 'Webfront\contactController@index');
 
 Route::get('/detailnews/{id}', 'Webfront\newsController@detail');
 Route::get('/detailevent/{id}', 'Webfront\eventController@detail');
+Route::get('/detailprogram/{id}', 'Webfront\programController@detail');
+Route::get('/detailcurricular/{id}', 'Webfront\curricularController@detail');
+Route::get('/detailosis/{id}', 'Webfront\osisController@detail');
+Route::get('/detailachievement/{id}', 'Webfront\achievementController@detail');
 

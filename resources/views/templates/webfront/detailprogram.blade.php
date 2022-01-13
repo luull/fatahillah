@@ -4,11 +4,11 @@
     <div class="container">
 
       <div class="d-flex justify-content-between align-items-center">
-        <h2>Detail Event</h2>
+        <h2>Detail program</h2>
         <ol>
           <li><a href="/">Home</a></li>
-          <li><a href="/viewevent">Event</a></li>
-          <li>Detail Event</li>
+          <li><a href="/viewprogram">program</a></li>
+          <li>Detail program</li>
         </ol>
       </div>
 
@@ -21,28 +21,26 @@
 
                 <div class="col-lg-4">
                     <div class="blog-image wow hover-effect fadeInLeft">
-                        <img src="{{asset($event->image)}}" class="img-fluid" alt="image">
+                        <img src="{{asset($program->image)}}" class="img-fluid" alt="image">
                     </div>
                 </div>
                 <div class="col-lg-8">
                     <article class="blog-minimal">
                         <div class="post-details alt-font text-lg-left">
-                            <?php $newDateTime = date('h:i A', strtotime($event->time)); ?>
-                            {{only_day($event->date)}} {{only_month($event->date)}} {{only_date($event->date)}}<span class="post-date"></span> <span class="post-separator">|</span>
+                            {{date('d-m-Y', strtotime($program->date_created))}}<span class="post-date"></span> <span class="post-separator">|</span>
                             <span class="post-author">
-                                    Jam <a href="#">{{$newDateTime}}</a>
+                                    By <a href="#">{{$program->created_by}}</a>
                                 </span>
                             <span class="post-separator">|</span>
-
 
                         </div>
 <hr>
                         <h2 class="post-title-minimal text-lg-left">
-                            <a href="#" rel="bookmark">{{$event->title}}</a>
+                            <a href="#" rel="bookmark">{{$program->title}}</a>
                         </h2>
 
                         <div class="post-content text-lg-left">
-                            <p>{!!$event->body!!}</p>
+                            <p>{!!$program->body!!}</p>
 
                         </div>
                     </article>

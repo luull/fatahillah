@@ -7,7 +7,7 @@
         <h2>Detail News</h2>
         <ol>
           <li><a href="/">Home</a></li>
-          <li><a href="/news">News</a></li>
+          <li><a href="/viewnews">News</a></li>
           <li>Detail News</li>
         </ol>
       </div>
@@ -34,7 +34,7 @@
                             <span class="post-separator">|</span>
 
                         </div>
-
+<hr>
                         <h2 class="post-title-minimal text-lg-left">
                             <a href="#" rel="bookmark">{{$news->title}}</a>
                         </h2>

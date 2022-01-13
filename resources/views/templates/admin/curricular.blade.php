@@ -5,7 +5,7 @@
         <nav class="breadcrumb-one" aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/dashboard"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></a></li>
-                <li class="breadcrumb-item active" aria-current="page"><span>News</span></li>
+                <li class="breadcrumb-item active" aria-current="page"><span>Kurikuler</span></li>
             </ol>
         </nav>
     </div>
@@ -22,7 +22,7 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Title</th>
+                                <th>Kurikuler</th>
                                 <th>Date created</th>
                                 <th>Created by</th>
                                 <th>Image</th>
@@ -41,7 +41,7 @@
                                 <td><img src="{{ asset($d->image) }}" style="max-height: 70px;" alt=""></td>
                                 <td>
                                     <a href="#" class="edit" id="e-{{$d->id}}" alt="Edit"><i data-feather="edit"></i></a>
-                                    <a href="/admin/news/delete/{{$d->id}}" alt="Delete"><i data-feather="trash" class="text-danger"></i></a>
+                                    <a href="/admin/curricular/delete/{{$d->id}}" alt="Delete"><i data-feather="trash" class="text-danger"></i></a>
                                 </td>
                             </tr>
                             @endforeach
@@ -56,25 +56,25 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="addModalLabel">Create news</h5>
+                <h5 class="modal-title" id="addModalLabel">Create curricular</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <i data-feather="close"></i>
                 </button>
             </div>
-            <form action="{{ route('create-news') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('create-curricular') }}" method="POST" enctype="multipart/form-data">
               @csrf
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label>Title</label>
+                                <label>Kurikuler</label>
                                 <input type="text" class="form-control" name="title">
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label>Body</label>
+                                <label>Konten</label>
                                 <textarea id="body" class="form-control" name="body" rows="10" cols="50"></textarea>
                             </div>
                         </div>
@@ -102,26 +102,26 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="editModalLabel">Edit news</h5>
+                <h5 class="modal-title" id="editModalLabel">Edit curricular</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <i data-feather="close"></i>
                 </button>
             </div>
-            <form action="{{ route('update-news') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('update-curricular') }}" method="POST" enctype="multipart/form-data">
               @csrf
               <input type="text" name="id" id="edit_id" hidden>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label>Title</label>
+                                <label>Kurikuler</label>
                                 <input type="text" id="edit_title" class="form-control" name="title">
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label>Body</label>
+                                <label>Konten</label>
                                 <textarea id="editbody" class="form-control edit_body" name="body" rows="10" cols="50"></textarea>
                             </div>
                         </div>
@@ -169,7 +169,7 @@
             $.ajax({
                 type:'get',
                 method:'get',
-                url:'/admin/news/find/'  + id ,
+                url:'/admin/curricular/find/'  + id ,
                 data:'_token = <?php echo csrf_token() ?>'   ,
                 success:function(hsl) {
                    if (hsl.error){

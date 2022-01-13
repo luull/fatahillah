@@ -12,6 +12,27 @@
     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
         <div class="widget-content widget-content-area py-4 px-4 br-6">
            <div class="container">
+            <form action="{{ route('upload-file') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                      <div class="row">
+                          <div class="col-md-6">
+                              <label>Upload</label>
+                              <span class="text-danger">* max size 2mb</span>
+                              <div class="input-group mb-3">
+                                  <input type="file" class="form-control" name="image">
+                                <div class="input-group-append">
+                                  <button class="btn btn-success" type="submit" id="button-addon2">Upload</button>
+                                </div>
+                                @error('image')
+                                <br>
+                                <div class="text-danger mt-1">The Image does not match the Requirements</div>
+                                @enderror
+                              </div>
+
+                          </div>
+                      </div>
+            </form>
+            <hr>
             <form action="{{ route('update-about') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @if (session('message'))
@@ -68,6 +89,10 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label>Sarana Prasarana</label>
+                            <textarea id="sarana" class="form-control" name="sarana" rows="10" cols="50">{!! $data->sarana !!}</textarea>
+                        </div>
                         <hr>
                         <button class="btn btn-success btn-block" type="submit">Save</button>
                     </div>
@@ -99,5 +124,12 @@
      language:'en-gb'
    });
    CKEDITOR.config.allowedContent = true;
+</script>
+<script type="text/javascript">
+    CKEDITOR.replace('sarana', {
+        filebrowserUploadUrl: "{{route('ckeditor.upload', ['_token' => csrf_token() ])}}",
+        filebrowserBrowseUrl: "{{asset('/admin/file_browse?path=images')}}",
+        filebrowserUploadMethod: 'form'
+    });
 </script>
 @stop

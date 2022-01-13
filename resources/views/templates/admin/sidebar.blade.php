@@ -19,8 +19,8 @@
                 </a>
                 <div class="tooltip"><span>Dashboard</span></div>
             </li>
-            <li class="menu {{ Request::is('admin/about','admin/teacher','admin/staf') ? 'active' : '' }}">
-                <a href="#about" data-active="{{ Request::is('admin/about','admin/teacher','admin/staf') ? 'true' : 'false' }}" class="menu-toggle">
+            <li class="menu {{ Request::is('admin/about','admin/teacher') ? 'active' : '' }}">
+                <a href="#about" data-active="{{ Request::is('admin/about','admin/teacher') ? 'true' : 'false' }}" class="menu-toggle">
                     <div class="base-menu">
                         <div class="base-icons">
                             <i data-feather="layout"></i>
@@ -49,16 +49,17 @@
                 </a>
                 <div class="tooltip"><span>Event</span></div>
             </li>
-            <li class="menu menu-single {{ Request::is('admin/news') ? 'active' : '' }}">
-                <a href="/admin/news" data-active="{{ Request::is('admin/news') ? 'true' : '' }}" class="menu-toggle">
+            <li class="menu {{ Request::is('admin/news','admin/program') ? 'active' : '' }}">
+                <a href="#news" data-active="{{ Request::is('admin/news','admin/program','admin/curricular','admin/osis','admin/achievement') ? 'true' : 'false' }}" class="menu-toggle">
                     <div class="base-menu">
                         <div class="base-icons">
                             <i data-feather="align-center"></i>
                         </div>
                     </div>
                 </a>
-                <div class="tooltip"><span>News</span></div>
+                <div class="tooltip"><span>Content</span></div>
             </li>
+
             <li class="menu menu-single {{ Request::is('admin/logo') ? 'active' : '' }}">
                 <a href="/admin/logo" data-active="{{ Request::is('admin/logo') ? 'true' : '' }}" class="menu-toggle">
                     <div class="base-menu">
@@ -158,6 +159,28 @@
                 </li>
                 <li class="{{ Request::is('admin/teacher') ? 'active' : '' }}">
                     <a href="/admin/teacher">Teacher Management</a>
+                </li>
+            </ul>
+        </div>
+        <div class="submenu" id="news">
+            <div class="menu-title">
+                <h3>Content</h3>
+            </div>
+            <ul class="submenu-list" data-parent-element="#news">
+                <li class="{{ Request::is('admin/news') ? 'active' : '' }}">
+                    <a href="/admin/news">Berita</a>
+                </li>
+                <li class="{{ Request::is('admin/program') ? 'active' : '' }}">
+                    <a href="/admin/program">Program</a>
+                </li>
+                <li class="{{ Request::is('admin/curricular') ? 'active' : '' }}">
+                    <a href="/admin/curricular">Kulikuler</a>
+                </li>
+                <li class="{{ Request::is('admin/osis') ? 'active' : '' }}">
+                    <a href="/admin/osis">Osis</a>
+                </li>
+                <li class="{{ Request::is('admin/achievement') ? 'active' : '' }}">
+                    <a href="/admin/achievement">Prestasi</a>
                 </li>
             </ul>
         </div>

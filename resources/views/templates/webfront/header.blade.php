@@ -24,11 +24,21 @@
       <nav id="navbar" class="navbar">
         <ul>
             <li>
-                <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">Home</a>
+                <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">Beranda</a>
             </li>
             <li>
-                <a class="nav-link {{ Request::is('about') ? 'active' : '' }}"  href="/about">About us</a>
+                <a class="nav-link {{ Request::is('about') ? 'active' : '' }}"  href="/about">Profil</a>
             </li>
+            <li>
+                <a class="nav-link {{ Request::is('viewprogram') ? 'active' : '' }}"  href="/viewprogram">Program</a>
+            </li>
+            <li class="dropdown"><a href="#"><span>Kesiswaan</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                    <li><i class="lni-angle-double-right right-arrow"></i><a class="{{ Request::is('viewcurricular') ? 'active' : '' }}" href="/viewcurricular">Kurikuler</a></li>
+                    <li><i class="lni-angle-double-right right-arrow"></i><a class="{{ Request::is('viewosis') ? 'active' : '' }}" href="/viewosis">Osis</a></li>
+                    <li><i class="lni-angle-double-right right-arrow"></i><a class="{{ Request::is('viewachievement') ? 'active' : '' }}" href="/viewachievement">Prestasi</a></li>
+                </ul>
+              </li>
             <li>
                 <a class="nav-link {{ Request::is('viewevent') ? 'active' : '' }}"  href="/viewevent">Event</a>
             </li>
