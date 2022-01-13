@@ -19,8 +19,8 @@
                 </a>
                 <div class="tooltip"><span>Dashboard</span></div>
             </li>
-            <li class="menu menu-single {{ Request::is('admin/about') ? 'active' : '' }}">
-                <a href="/admin/about" data-active="{{ Request::is('admin/about') ? 'true' : '' }}" class="menu-toggle">
+            <li class="menu {{ Request::is('admin/about','admin/teacher','admin/staf') ? 'active' : '' }}">
+                <a href="#about" data-active="{{ Request::is('admin/about','admin/teacher','admin/staf') ? 'true' : 'false' }}" class="menu-toggle">
                     <div class="base-menu">
                         <div class="base-icons">
                             <i data-feather="layout"></i>
@@ -148,13 +148,16 @@
 
     <div id="compact_submenuSidebar" class="submenu-sidebar">
 
-        <div class="submenu" id="dashboard">
-            <ul class="submenu-list" data-parent-element="#dashboard">
-                <li class="active">
-                    <a href="index.html"> Analytics </a>
+        <div class="submenu" id="about">
+            <div class="menu-title">
+                <h3>About</h3>
+            </div>
+            <ul class="submenu-list" data-parent-element="#about">
+                <li class="{{ Request::is('admin/about') ? 'active' : '' }}">
+                    <a href="/admin/about">About us </a>
                 </li>
-                <li>
-                    <a href="index2.html"> Sales </a>
+                <li class="{{ Request::is('admin/teacher') ? 'active' : '' }}">
+                    <a href="/admin/teacher">Teacher Management</a>
                 </li>
             </ul>
         </div>

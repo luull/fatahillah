@@ -60,6 +60,12 @@ Route::get('/admin/photo/delete/{id}', 'Admin\photoController@delete')->name('de
 Route::get('/admin/photo/find/{id}', 'Admin\photoController@find');
 Route::post('/admin/updatephoto', 'Admin\photoController@update')->name('update-photo');
 
+Route::get('/admin/teacher', 'Admin\teacherController@index');
+Route::post('/admin/createteacher', 'Admin\teacherController@create')->name('create-teacher');
+Route::get('/admin/teacher/delete/{id}', 'Admin\teacherController@delete')->name('delete-teacher');
+Route::get('/admin/teacher/find/{id}', 'Admin\teacherController@find');
+Route::post('/admin/updateteacher', 'Admin\teacherController@update')->name('update-teacher');
+
 Route::get('/admin/video', 'Admin\videoController@index');
 Route::post('/admin/createvideo', 'Admin\videoController@create')->name('create-video');
 Route::get('/admin/video/delete/{id}', 'Admin\videoController@delete')->name('delete-video');
