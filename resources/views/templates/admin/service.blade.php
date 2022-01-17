@@ -24,6 +24,7 @@
                                 <th>No</th>
                                 <th>Nama</th>
                                 <th>Email</th>
+                                <th>No.telp</th>
                                 <th>Judul</th>
                                 <th>Isi</th>
                                 <th>Tgl dibuat</th>
@@ -38,6 +39,7 @@
                                 <td>{{$i++}}</td>
                                 <td>{{$d->name}}</td>
                                 <td>{{$d->email}}</td>
+                                <td>{{$d->contact}}</td>
                                 <td>{{$d->subject}}</td>
                                 <td>{{$d->message}}</td>
                                 <td>{{$d->date_created}}</td>

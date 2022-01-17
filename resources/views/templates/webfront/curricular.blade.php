@@ -4,10 +4,10 @@
     <div class="container">
 
       <div class="d-flex justify-content-between align-items-center">
-        <h2>Kulikuler</h2>
+        <h2>Kurikuler</h2>
         <ol>
           <li><a href="/">Home</a></li>
-          <li>Kulikuler</li>
+          <li>Kurikuler</li>
         </ol>
       </div>
 

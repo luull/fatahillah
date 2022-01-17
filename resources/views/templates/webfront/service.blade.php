@@ -39,6 +39,9 @@
               </div>
             </div>
             <div class="form-group">
+                <input type="text" class="form-control" name="contact" id="subject" placeholder="Nomor telp" required>
+              </div>
+            <div class="form-group">
               <input type="text" class="form-control" name="subject" id="subject" placeholder="Judul Pengaduan" required>
             </div>
             <div class="form-group">
@@ -47,11 +50,14 @@
             @else
             <div class="row">
               <div class="col form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required disabled>
+                <input type="text" name="name" class="form-control" id="name" placeholder="Nama" required disabled>
               </div>
               <div class="col form-group">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required disabled>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email" required disabled>
               </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="contact" id="subject" placeholder="Nomor telp" required disabled>
             </div>
             <div class="form-group">
               <input type="text" class="form-control" name="subject" id="subject" placeholder="Judul Pengaduan" disabled>

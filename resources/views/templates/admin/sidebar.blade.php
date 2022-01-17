@@ -19,8 +19,8 @@
                 </a>
                 <div class="tooltip"><span>Dashboard</span></div>
             </li>
-            <li class="menu {{ Request::is('admin/about','admin/teacher') ? 'active' : '' }}">
-                <a href="#about" data-active="{{ Request::is('admin/about','admin/teacher') ? 'true' : 'false' }}" class="menu-toggle">
+            <li class="menu {{ Request::is('admin/about','admin/teacher','admin/sarana') ? 'active' : '' }}">
+                <a href="#about" data-active="{{ Request::is('admin/about','admin/teacher','admin/sarana') ? 'true' : 'false' }}" class="menu-toggle">
                     <div class="base-menu">
                         <div class="base-icons">
                             <i data-feather="layout"></i>
@@ -154,14 +154,17 @@
 
         <div class="submenu" id="about">
             <div class="menu-title">
-                <h3>About</h3>
+                <h3>Profil</h3>
             </div>
             <ul class="submenu-list" data-parent-element="#about">
                 <li class="{{ Request::is('admin/about') ? 'active' : '' }}">
                     <a href="/admin/about">Profil </a>
                 </li>
+                <li class="{{ Request::is('admin/sarana') ? 'active' : '' }}">
+                    <a href="/admin/sarana">Sarana dan Prasarana </a>
+                </li>
                 <li class="{{ Request::is('admin/teacher') ? 'active' : '' }}">
-                    <a href="/admin/teacher">Manajemen Pemimpin</a>
+                    <a href="/admin/teacher">Manajemen Pimpinan</a>
                 </li>
             </ul>
         </div>
@@ -180,7 +183,7 @@
                     <a href="/admin/program">Program</a>
                 </li>
                 <li class="{{ Request::is('admin/curricular') ? 'active' : '' }}">
-                    <a href="/admin/curricular">Kulikuler</a>
+                    <a href="/admin/curricular">Kurikuler</a>
                 </li>
                 <li class="{{ Request::is('admin/osis') ? 'active' : '' }}">
                     <a href="/admin/osis">Osis</a>

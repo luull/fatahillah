@@ -22,12 +22,14 @@ class serviceController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required',
+            'contact' => 'required',
             'subject' => 'required',
             'message' => 'required',
         ]);
         $hsl = Service::create([
             'name' => $request->name,
             'email' => $request->email,
+            'contact' => $request->contact,
             'subject' => $request->subject,
             'message' => $request->message,
         ]);

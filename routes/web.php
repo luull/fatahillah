@@ -28,9 +28,12 @@ Route::post('/admin/updateconfig', 'Admin\configurationController@update')->name
 
 Route::get('/admin/about', 'Admin\aboutController@index');
 Route::post('/admin/updateabout', 'Admin\aboutController@update')->name('update-about');
-Route::post('ckeditor/upload', 'Admin\aboutController@upload')->name('ckeditor.upload');
-Route::get('/admin/file_browse', 'Admin\aboutController@file_browse');
-Route::post('/admin/uploadfile', 'Admin\aboutController@uploadfile')->name('upload-file');
+
+Route::get('/admin/sarana', 'Admin\saranaController@index');
+Route::post('/admin/updatesarana', 'Admin\saranaController@update')->name('update-sarana');
+Route::post('ckeditor/upload', 'Admin\saranaController@upload')->name('ckeditor.upload');
+Route::get('/admin/file_browse', 'Admin\saranaController@file_browse');
+Route::post('/admin/uploadfile', 'Admin\saranaController@uploadfile')->name('upload-file');
 
 Route::get('/admin/event', 'Admin\eventController@index');
 Route::post('/admin/createevent', 'Admin\eventController@create')->name('create-event');
