@@ -29,7 +29,7 @@
             <li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                     <li><i class="lni-angle-double-right right-arrow"></i><a class="{{ Request::is('about') ? 'active' : '' }}" href="/about">Profil</a></li>
-                    <li><i class="lni-angle-double-right right-arrow"></i><a href="/about#visi">Visi</a></li>
+                    <li><i class="lni-angle-double-right right-arrow"></i><a  href="/about#visi">Visi</a></li>
                     <li><i class="lni-angle-double-right right-arrow"></i><a href="/about#misi">Misi</a></li>
                     <li><i class="lni-angle-double-right right-arrow"></i><a href="/about#pimpinan">Struktur Kepemimpinan</a></li>
                     <li><i class="lni-angle-double-right right-arrow"></i><a href="/about#cards">Staff</a></li>

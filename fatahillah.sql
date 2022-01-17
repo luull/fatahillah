@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 13, 2022 at 05:22 PM
+-- Generation Time: Jan 17, 2022 at 09:09 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -42,7 +42,7 @@ CREATE TABLE `about` (
 --
 
 INSERT INTO `about` (`id`, `title`, `body`, `vission`, `mission`, `sarana`, `image`) VALUES
-(1, 'About us', '<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '<ol>\r\n	<li style=\"display: block; width: 0px; height: 0px; padding: 0px; border: 0px; margin: 0px; position: absolute; top: 0px; left: -9999px; opacity: 0; overflow: hidden;\">&nbsp;</li>\r\n	<li>sdasdsadasd</li>\r\n	<li>asdasdsadasd</li>\r\n	<li>asdsadasdasd</li>\r\n	<li>asdasdsdaas</li>\r\n	<li style=\"display: block; width: 0px; height: 0px; padding: 0px; border: 0px; margin: 0px; position: absolute; top: 0px; left: -9999px; opacity: 0; overflow: hidden;\">&nbsp;</li>\r\n</ol>', '<ol>\r\n	<li>asdasdasdasd</li>\r\n	<li>asdasdasd</li>\r\n	<li>asd</li>\r\n	<li>asdasdasd</li>\r\n	<li>asdasdsad</li>\r\n	<li>asdasd</li>\r\n	<li>asdsadas</li>\r\n</ol>', '<p>test prasarana</p>', '/images/1640590930.jpg');
+(1, 'test', '<p>test</p>', '<p>test</p>', '<p>test</p>', '<p>test prasarana</p>\r\n\r\n<p><img alt=\"\" src=\"http://127.0.0.1:8000/images/1640590930.jpg\" style=\"height:464px; width:696px\" /></p>\r\n\r\n<p><img alt=\"\" src=\"http://127.0.0.1:8000/images/1642079586.png\" style=\"height:1500px; width:1500px\" /></p>', '/profil/1642402620.png');
 
 -- --------------------------------------------------------
 
@@ -85,8 +85,8 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`, `level`, `date_created`) VALUES
-(1, 'admin', '$2y$10$yEIT4h52PWz4IuFByFSHA.0I2kNzsgswTSAHHLSjuz7eTPJg8kYxi', 0, '2021-12-27 10:06:58'),
-(2, 'bayu', '$2y$10$yEIT4h52PWz4IuFByFSHA.0I2kNzsgswTSAHHLSjuz7eTPJg8kYxi', 1, '2021-12-27 21:03:42');
+(1, 'admin', '$2y$10$yEIT4h52PWz4IuFByFSHA.0I2kNzsgswTSAHHLSjuz7eTPJg8kYxi', 1, '2021-12-27 10:06:58'),
+(2, 'luull', '$2y$10$yEIT4h52PWz4IuFByFSHA.0I2kNzsgswTSAHHLSjuz7eTPJg8kYxi', 0, '2021-12-27 21:03:42');
 
 -- --------------------------------------------------------
 
@@ -134,7 +134,7 @@ CREATE TABLE `configuration` (
 --
 
 INSERT INTO `configuration` (`id`, `name`, `email`, `kontak`, `wa`, `fb`, `ig`, `alamat`, `embedmaps`, `logo`) VALUES
-(1, 'SMK FATAHILLAH', 'test@gmail.com', '0812372138', '081586298430', 'fatahillah', 'fatahillah', 'perum GCI blok A, Cileungsi - Bogor', '!1m18!1m12!1m3!1d3964.7614311101443!2d107.03753631395583!3d-6.424690295351672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69965ac34c0f21%3A0xef519b4f14cf74e4!2sSMK%20Fatahillah%20Cileungsi!5e0!3m2!1sid!2sid!4v1641459036035!5m2!1sid!2sid', '/logo/1640875666.png');
+(1, 'SMK FATAHILLAH', 'test@gmail.com', '0812372138', '081586298430', '#000', 'fatahillah', 'perum GCI blok A, Cileungsi - Bogor', '!1m18!1m12!1m3!1d3964.7614311101443!2d107.03753631395583!3d-6.424690295351672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69965ac34c0f21%3A0xef519b4f14cf74e4!2sSMK%20Fatahillah%20Cileungsi!5e0!3m2!1sid!2sid!4v1641459036035!5m2!1sid!2sid', '/logo/1640875666.png');
 
 -- --------------------------------------------------------
 
@@ -320,6 +320,7 @@ CREATE TABLE `service` (
   `message` text NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `contact` varchar(12) NOT NULL,
   `date_created` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -327,8 +328,9 @@ CREATE TABLE `service` (
 -- Dumping data for table `service`
 --
 
-INSERT INTO `service` (`id`, `subject`, `message`, `name`, `email`, `date_created`) VALUES
-(1, 'asd', 'asdsa', 'Luul 14', 'm.fadlullah14@gmail.com', '2022-01-13 21:18:27');
+INSERT INTO `service` (`id`, `subject`, `message`, `name`, `email`, `contact`, `date_created`) VALUES
+(1, 'asd', 'asdsa', 'Luul 14', 'm.fadlullah14@gmail.com', '', '2022-01-13 21:18:27'),
+(3, 'asdas', 'asdasdasd', 'Luul 14', 'm.fadlullah14@gmail.com', '0812367213', '2022-01-17 13:30:07');
 
 -- --------------------------------------------------------
 
@@ -375,6 +377,13 @@ CREATE TABLE `users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `photo`, `google_id`, `remember_token`, `created_at`, `updated_at`) VALUES
+(4, 'Luul 14', 'm.fadlullah14@gmail.com', NULL, '$2y$10$8MpRqm23adG4yWpFBuyLk.CuegHDxsWBRDEK22MnNW1F6YXqSX1ra', NULL, '114571505968709729134', NULL, '2022-01-16 23:29:29', '2022-01-16 23:29:29');
 
 -- --------------------------------------------------------
 
@@ -555,7 +564,7 @@ ALTER TABLE `curriculum`
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `logo`
@@ -591,19 +600,19 @@ ALTER TABLE `program`
 -- AUTO_INCREMENT for table `service`
 --
 ALTER TABLE `service`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `teacher`
 --
 ALTER TABLE `teacher`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `video`
