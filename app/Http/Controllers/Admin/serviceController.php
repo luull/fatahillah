@@ -19,6 +19,15 @@ class serviceController extends Controller
         $data = Service::all();
         return view('templates.admin.service', compact('data'));
     }
+    public function find(Request $req)
+    {
+        $hsl = Service::find($req->id);
+        if ($hsl) {
+            return response()->json($hsl);
+        } else {
+            return response()->json(['message' => 'Data tidak ditemukan', 'error' => true]);
+        }
+    }
     public function delete(Request $request)
     {
         $hsl = Service::find($request->id)->delete();

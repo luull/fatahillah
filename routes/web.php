@@ -118,6 +118,7 @@ Route::get('/admin/curriculum/find/{id}', 'Admin\curriculumController@find');
 Route::post('/admin/updatecurriculum', 'Admin\curriculumController@update')->name('update-curriculum');
 
 Route::get('/admin/service', 'Admin\serviceController@index');
+Route::get('/admin/service/find/{id}', 'Admin\serviceController@find');
 Route::get('/admin/service/delete/{id}', 'Admin\serviceController@delete')->name('delete-service');
 // WEBFRONT ROUTE
 

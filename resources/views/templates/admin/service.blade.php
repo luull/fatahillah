@@ -23,10 +23,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>Nama</th>
-                                <th>Email</th>
                                 <th>No.telp</th>
-                                <th>Judul</th>
-                                <th>Isi</th>
                                 <th>Tgl dibuat</th>
                                 <th>Aksi</th>
                             </tr>
@@ -38,13 +35,10 @@
                             <tr>
                                 <td>{{$i++}}</td>
                                 <td>{{$d->name}}</td>
-                                <td>{{$d->email}}</td>
                                 <td>{{$d->contact}}</td>
-                                <td>{{$d->subject}}</td>
-                                <td>{{$d->message}}</td>
                                 <td>{{$d->date_created}}</td>
                                 <td>
-                                    {{-- <a href="#" class="edit" id="e-{{$d->id}}" alt="Edit"><i data-feather="edit"></i></a> --}}
+                                    <a href="#" class="edit" id="e-{{$d->id}}" alt="Detail"><i data-feather="eye"></i></a>
                                     <a href="/admin/service/delete/{{$d->id}}" alt="Delete"><i data-feather="trash" class="text-danger"></i></a>
                                 </td>
                             </tr>
@@ -55,4 +49,74 @@
         </div>
     </div>
 </div>
+<!-- Modal edit-->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Detail Pengaduan</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <i data-feather="close"></i>
+                </button>
+            </div>
+              {{-- <input type="text" name="id" id="edit_id" hidden> --}}
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Nama</label>
+                                <input type="text" style="color: #000 !important;" id="get_name" class="form-control" readonly>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Kontak</label>
+                                <input type="text" style="color: #000 !important;" id="get_contact" class="form-control" readonly>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Judul</label>
+                                <input type="text" style="color: #000 !important;" id="get_subject" class="form-control" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label>Isi</label>
+                                <textarea id="get_message" style="color: #000 !important;" class="form-control" rows="3" cols="5" readonly></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
 @endsection
+@section('script')
+<script >
+    $(document).ready(function(){
+        $(".edit").click(function(){
+            var idnya=$(this).attr('id').split('-');
+            var id=idnya[1];
+            console.log(id);
+           var url="<?PHP echo env('APP_URL');?>/";
+            $.ajax({
+                type:'get',
+                method:'get',
+                url:'/admin/service/find/'  + id ,
+                data:'_token = <?php echo csrf_token() ?>'   ,
+                success:function(hsl) {
+                   if (hsl.error){
+                       alert(hsl.message);
+                   } else{
+                    $("#get_subject").val(hsl.subject);
+                    $("#get_name").val(hsl.name);
+                    $("#get_contact").val(hsl.contact);
+                    $("textarea#get_message").val(hsl.message);
+                    $("#editModal").modal();
+                   }
+                }
+            });
+        });
+    });
+</script>
+@stop
