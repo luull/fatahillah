@@ -53,7 +53,7 @@
                 <a class="nav-link {{ Request::is('viewcurriculum') ? 'active' : '' }}"  href="/viewcurriculum">Kurikulum</a>
             </li>
             <li>
-                <a class="nav-link {{ Request::is('viewevent') ? 'active' : '' }}"  href="/viewevent">Acara</a>
+                <a class="nav-link {{ Request::is('viewevent') ? 'active' : '' }}"  href="/viewevent">Kegiatan</a>
             </li>
             <li>
                 <a class="nav-link {{ Request::is('viewnews') ? 'active' : '' }}"  href="/viewnews">Berita</a>
@@ -70,6 +70,9 @@
         </li>
           <li>
             <a class="nav-link {{ Request::is('contact') ? 'active' : '' }}" href="/contact">Kontak </a>
+        </li>
+          <li>
+            <a class="nav-link {{ Request::is('viewppdb') ? 'active' : '' }}" href="/viewppdb">PPDB </a>
         </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

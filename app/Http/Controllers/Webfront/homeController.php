@@ -17,8 +17,6 @@ class homeController extends Controller
 {
     public function index()
     {
-        $config = Configuration::first();
-        session(['config' => $config]);
         $banner = Banner::get();
         $about = About::first();
         $news = News::offset(0)->limit(6)->get();
@@ -26,6 +24,6 @@ class homeController extends Controller
         $event = Event::offset(0)->limit(6)->get();
         $photo = Photo::offset(0)->limit(6)->get();
         $video = Video::offset(0)->limit(6)->get();
-        return view('templates.webfront.home',compact('config','banner','about','news','event','photo','video','logo'));
+        return view('templates.webfront.home',compact('banner','about','news','event','photo','video','logo'));
     }
 }

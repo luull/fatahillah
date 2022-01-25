@@ -23,9 +23,7 @@ class loginController extends Controller
             $check = Admin::where('username', $request->username)->first();
             if($check){
                 if (Hash::check($request->password, $check->password)) {
-                    $get = Configuration::first();
                     session(['admin_data' => $check]);
-                    session(['config' => $get]);
                     return redirect('/admin/dashboard');
                 }else{
                     return redirect()->back()->with(['message' => 'Kata sandi salah', 'color' => 'alert-danger']);
@@ -39,7 +37,9 @@ class loginController extends Controller
     }
     public function logout(Request $request)
     {
-        $request->session()->flush();
+        if ($request->session()->has('admin_data')) {
+            $request->session()->forget('admin_data');
+        }
         return redirect('/login')->with(['message' => 'Berhasil keluar', 'color' => 'alert-success']);
     }
     public function changepass()

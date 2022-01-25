@@ -92,6 +92,16 @@
                 </a>
                 <div class="tooltip"><span>Manajemen Pengguna</span></div>
             </li>
+            <li class="menu menu-single {{ Request::is('admin/ppdb') ? 'active' : '' }}">
+                <a href="/admin/ppdb" data-active="{{ Request::is('admin/ppdb') ? 'true' : '' }}" class="menu-toggle">
+                    <div class="base-menu">
+                        <div class="base-icons">
+                            <i data-feather="clipboard"></i>
+                        </div>
+                    </div>
+                </a>
+                <div class="tooltip"><span>PPDB</span></div>
+            </li>
             <li class="menu menu-single {{ Request::is('admin/service') ? 'active' : '' }}">
                 <a href="/admin/service" data-active="{{ Request::is('admin/service') ? 'true' : '' }}" class="menu-toggle">
                     <div class="base-menu">
@@ -177,7 +187,7 @@
                     <a href="/admin/news">Berita</a>
                 </li>
                 <li class="{{ Request::is('admin/event') ? 'active' : '' }}">
-                    <a href="/admin/event">Acara</a>
+                    <a href="/admin/event">Kegiatan</a>
                 </li>
                 <li class="{{ Request::is('admin/program') ? 'active' : '' }}">
                     <a href="/admin/program">Program</a>

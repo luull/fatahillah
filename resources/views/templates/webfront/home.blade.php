@@ -174,8 +174,8 @@
         <div class="container blog-container">
             <div class="row justify-content-center">
                 <div class="section-title">
-                    <h2>Acara</h2>
-                    <h3><span>Acara</span></h3>
+                    <h2>Kegiatan</h2>
+                    <h3><span>Kegiatan</span></h3>
 
                   </div>
 

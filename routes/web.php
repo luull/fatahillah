@@ -99,6 +99,9 @@ Route::get('/admin/curricular/delete/{id}', 'Admin\curricularController@delete')
 Route::get('/admin/curricular/find/{id}', 'Admin\curricularController@find');
 Route::post('/admin/updatecurricular', 'Admin\curricularController@update')->name('update-curricular');
 
+Route::get('/admin/ppdb', 'Admin\ppdbController@index');
+Route::post('/admin/updateppdb', 'Admin\ppdbController@update')->name('update-ppdb');
+
 Route::get('/admin/osis', 'Admin\osisController@index');
 Route::post('/admin/createosis', 'Admin\osisController@create')->name('create-osis');
 Route::get('/admin/osis/delete/{id}', 'Admin\osisController@delete')->name('delete-osis');
@@ -137,6 +140,7 @@ Route::get('/viewachievement', 'Webfront\achievementController@index');
 Route::get('/viewcurriculum', 'Webfront\curriculumController@index');
 Route::get('/contact', 'Webfront\contactController@index');
 Route::get('/service', 'Webfront\serviceController@index');
+Route::get('/viewppdb', 'Webfront\ppdbController@index');
 Route::post('/createservice', 'Webfront\serviceController@create')->name('create-service');
 
 Route::get('/detailnews/{id}', 'Webfront\newsController@detail');

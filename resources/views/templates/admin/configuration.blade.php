@@ -100,9 +100,9 @@
                                 <label>Maps</label>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                      <span class="input-group-text" id="basic-addon1">https://www.google.com/maps/embed?pb=</span>
+                                      <span class="input-group-text" id="basic-addon1">src =</span>
                                     </div>
-                                    <input type="text" name="embedmaps" class="form-control" value="{{$data->embedmaps}}" aria-label="Username" aria-describedby="basic-addon1">
+                                    <input type="text" name="embedmaps" class="form-control" value="{{$data->embedmaps}}" aria-describedby="basic-addon1">
                                   </div>
                             </div>
                         </div>

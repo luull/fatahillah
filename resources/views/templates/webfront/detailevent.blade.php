@@ -4,11 +4,11 @@
     <div class="container">
 
       <div class="d-flex justify-content-between align-items-center">
-        <h2>Detail Acara</h2>
+        <h2>Detail Kegiatan</h2>
         <ol>
           <li><a href="/">Home</a></li>
-          <li><a href="/viewevent">Acara</a></li>
-          <li>Detail Acara</li>
+          <li><a href="/viewevent">Kegiatan</a></li>
+          <li>Detail Kegiatan</li>
         </ol>
       </div>
 

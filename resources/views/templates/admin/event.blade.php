@@ -5,7 +5,7 @@
         <nav class="breadcrumb-one" aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/dashboard"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></a></li>
-                <li class="breadcrumb-item active" aria-current="page"><span>Acara</span></li>
+                <li class="breadcrumb-item active" aria-current="page"><span>Kegiatan</span></li>
             </ol>
         </nav>
     </div>
@@ -60,7 +60,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="addModalLabel">Tambah Acara</h5>
+                <h5 class="modal-title" id="addModalLabel">Tambah Kegiatan</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <i data-feather="close"></i>
                 </button>
@@ -117,7 +117,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="editModalLabel">Ubah Acara</h5>
+                <h5 class="modal-title" id="editModalLabel">Ubah Kegiatan</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <i data-feather="close"></i>
                 </button>
