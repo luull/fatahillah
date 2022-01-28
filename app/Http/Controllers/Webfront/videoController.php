@@ -11,7 +11,9 @@ class videoController extends Controller
 {
     public function index()
     {
-
+        if(session('config') == null){
+            return redirect('/');
+        }
         $video = Video::get();
         $banner = Banner::first();
         return view('templates.webfront.video',compact('video','banner'));

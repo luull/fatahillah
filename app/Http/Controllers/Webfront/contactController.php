@@ -11,7 +11,9 @@ class contactController extends Controller
 {
     public function index()
     {
-
+        if(session('config') == null){
+            return redirect('/');
+        }
         $configuration =Configuration::first();
         $banner = Banner::first();
         return view('templates.webfront.contact',compact('configuration','banner'));

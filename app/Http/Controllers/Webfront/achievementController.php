@@ -11,6 +11,9 @@ class achievementController extends Controller
 {
     public function index()
     {
+        if(session('config') == null){
+            return redirect('/');
+        }
 
         $achievement = Achievement::get();
         $banner = Banner::first();
@@ -18,6 +21,9 @@ class achievementController extends Controller
     }
     public function detail(Request $request)
     {
+        if(session('config') == null){
+            return redirect('/');
+        }
         $banner = Banner::first();
         $achievement = Achievement::where('id', $request->id)->first();
         return view('templates.webfront.detailachievement', compact('achievement','banner'));

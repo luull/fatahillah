@@ -11,6 +11,9 @@ class photoController extends Controller
 {
     public function index()
     {
+        if(session('config') == null){
+            return redirect('/');
+        }
 
         $photo = Photo::get();
         $banner = Banner::first();

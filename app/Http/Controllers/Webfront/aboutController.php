@@ -10,9 +10,11 @@ use Illuminate\Http\Request;
 
 class aboutController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-
+        if(session('config') == null){
+            return redirect('/');
+        }
         $about = About::first();
         $banner = Banner::first();
         $teacher = Teacher::get();

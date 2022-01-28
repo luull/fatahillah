@@ -10,6 +10,9 @@ class ppdbController extends Controller
 {
     public function index()
     {
+        if(session('config') == null){
+            return redirect('/');
+        }
         $ppdb = Ppdb::first();
         return view('templates.webfront.ppdb', compact('ppdb'));
     }

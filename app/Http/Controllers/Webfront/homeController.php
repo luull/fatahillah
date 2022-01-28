@@ -17,6 +17,8 @@ class homeController extends Controller
 {
     public function index()
     {
+        $config = Configuration::first();
+        session(['config' => $config]);
         $banner = Banner::get();
         $about = About::first();
         $news = News::offset(0)->limit(6)->get();
