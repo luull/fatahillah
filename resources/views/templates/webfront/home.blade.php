@@ -141,7 +141,7 @@
 
       <div class="section-title">
         <h2>Berita</h2>
-        <h3>Berita</span></h3>
+        <h3><span>Berita</span></h3>
 
       </div>
 
