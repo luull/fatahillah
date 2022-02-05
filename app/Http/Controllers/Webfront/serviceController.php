@@ -16,9 +16,6 @@ class serviceController extends Controller
         if(session('config') == null){
             return redirect('/');
         }
-        if(session('user-session') == null){
-            return redirect('/');
-        }
         $banner = Banner::first();
         return view('templates.webfront.service',compact('banner'));
     }
