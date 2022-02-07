@@ -96,34 +96,30 @@
                 </div>
 
                 <div class="col-md-12">
-                    <section id="cards">
+                    <section id="cards" class="team">
                         <div class="container py-2">
-                            <div class="row pb-4">
-                                <div class="section-title mb-3">
-                                    <h3>Struktur <span>Staff</span></h3>
-                                  </div>
-                            </div>
-                            <!-- cards -->
-                            <div class="row justify-content-center">
+                            <div class="section-title mb-3">
+                                <h3>Struktur <span>Staff</span></h3>
+                              </div>
+
+                              <div class="row justify-content-center">
                                 @foreach ($teacher as $t )
                                 @if($t->category == 'Staff')
-                                <div class="col-lg-4 col-md-6 mb-4 pt-5">
-                                    <div class="card shadow-sm border-0">
-                                        <div class="card-body">
-                                            <div class="user-picture">
-                                                <img src="{{ asset($t->image)}}" class="shadow-sm rounded-circle" height="130" width="130" />
-                                            </div>
-                                            <div class="user-content">
-                                                <h5 class="text-capitalize user-name mb-3">{{$t->name}}</h5>
-                                                <p class=" text-capitalize text-muted small blockquote-footer">{{$t->title}}</p>
+                                <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="member">
+                                        <div class="member-img">
+                                            <img src="{{ asset($t->image)}}" class="img-fluid" alt="">
 
-                                            </div>
+                                        </div>
+                                        <div class="member-info">
+                                            <h4>{{$t->name}}</h4>
+                                            <span>{{$t->title}}</span>
                                         </div>
                                     </div>
                                 </div>
                                 @endif
                                 @endforeach
-                            </div>
+                              </div>
                         </div>
                     </section>
                 </div>

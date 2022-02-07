@@ -13,6 +13,9 @@ class videoController extends Controller
         if(session('admin_data') == null){
             return redirect('/login');
         }
+        if(session('config') == null){
+            return redirect('/login');
+        }
         $data = Video::all();
         return view('templates.admin.video', compact('data'));
     }

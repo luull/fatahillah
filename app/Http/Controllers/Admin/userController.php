@@ -16,6 +16,9 @@ class userController extends Controller
         if(session('admin_data')->level == 0){
             return redirect()->back()->with(['message' => 'Akses tidak diperbolehkan', 'color' => 'alert-danger']);
         }
+        if(session('config') == null){
+            return redirect('/login');
+        }
         $data = Admin::all();
         return view('templates.admin.user', compact('data'));
     }

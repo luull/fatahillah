@@ -16,6 +16,9 @@ class serviceController extends Controller
         if(session('admin_data')->level == 0){
             return redirect()->back()->with(['message' => 'Akses tidak diperbolehkan', 'color' => 'alert-danger']);
         }
+        if(session('config') == null){
+            return redirect('/login');
+        }
         $data = Service::all();
         return view('templates.admin.service', compact('data'));
     }

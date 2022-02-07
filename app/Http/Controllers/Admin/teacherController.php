@@ -13,6 +13,9 @@ class teacherController extends Controller
         if(session('admin_data') == null){
             return redirect('/login');
         }
+        if(session('config') == null){
+            return redirect('/login');
+        }
         $data = Teacher::all();
         return view('templates.admin.teacher', compact('data'));
     }

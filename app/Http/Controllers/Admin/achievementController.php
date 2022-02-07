@@ -13,6 +13,9 @@ class achievementController extends Controller
         if(session('admin_data') == null){
             return redirect('/login');
         }
+        if(session('config') == null){
+            return redirect('/login');
+        }
         $data = Achievement::all();
         return view('templates.admin.achievement', compact('data'));
     }

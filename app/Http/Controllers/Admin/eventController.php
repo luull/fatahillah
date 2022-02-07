@@ -13,6 +13,9 @@ class eventController extends Controller
         if(session('admin_data') == null){
             return redirect('/login');
         }
+        if(session('config') == null){
+            return redirect('/login');
+        }
         $data = Event::all();
         return view('templates.admin.event', compact('data'));
     }

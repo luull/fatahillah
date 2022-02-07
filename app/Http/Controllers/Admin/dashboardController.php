@@ -12,6 +12,9 @@ class dashboardController extends Controller
         if(session('admin_data') == null){
             return redirect('/login');
         }
+        if(session('config') == null){
+            return redirect('/login');
+        }
         return view('templates.admin.dashboard');
     }
 }

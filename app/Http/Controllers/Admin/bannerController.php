@@ -14,6 +14,9 @@ class bannerController extends Controller
         if(session('admin_data') == null){
             return redirect('/login');
         }
+        if(session('config') == null){
+            return redirect('/login');
+        }
         $data = Banner::all();
         return view('templates.admin.banner', compact('data'));
     }

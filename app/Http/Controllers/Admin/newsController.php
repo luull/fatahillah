@@ -13,6 +13,9 @@ class newsController extends Controller
         if(session('admin_data') == null){
             return redirect('/login');
         }
+        if(session('config') == null){
+            return redirect('/login');
+        }
         $data = News::all();
         return view('templates.admin.news', compact('data'));
     }

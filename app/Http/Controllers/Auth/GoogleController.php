@@ -27,8 +27,8 @@ class GoogleController extends Controller
      */
     public function handleGoogleCallback()
     {
-        try {
 
+        try {
             $user = Socialite::driver('google')->user();
 
             $finduser = User::where('google_id', $user->id)->first();
@@ -49,7 +49,7 @@ class GoogleController extends Controller
                 ]);
 
                 Auth::login($newUser);
-                session(['user-session' => $finduser]);
+                session(['user-session' => $newUser]);
                 return redirect('/service')->with(['message' => 'Silahkan melanjutkan pengaduan anda', 'color' => 'alert-success']);;
             }
 

@@ -13,6 +13,9 @@ class photoController extends Controller
         if(session('admin_data') == null){
             return redirect('/login');
         }
+        if(session('config') == null){
+            return redirect('/login');
+        }
         $data = Photo::all();
         return view('templates.admin.photo', compact('data'));
     }

@@ -12,6 +12,9 @@ class saranaController extends Controller
         if(session('admin_data') == null){
             return redirect('/login');
         }
+        if(session('config') == null){
+            return redirect('/login');
+        }
         $data = About::first();
         return view('templates.admin.sarana', compact('data'));
     }

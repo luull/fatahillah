@@ -13,6 +13,9 @@ class curricularController extends Controller
         if(session('admin_data') == null){
             return redirect('/login');
         }
+        if(session('config') == null){
+            return redirect('/login');
+        }
         $data = Curricular::all();
         return view('templates.admin.curricular', compact('data'));
     }

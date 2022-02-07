@@ -24,6 +24,9 @@ class ppdbController extends Controller
             'formulir' => 'max:2048',
             'body' => 'required',
         ]);
+        if(session('config') == null){
+            return redirect('/login');
+        }
         $brosur = '';
         if ($request->hasfile('brosur')) {
             $brosurName = time().'.'.$request->brosur->extension();

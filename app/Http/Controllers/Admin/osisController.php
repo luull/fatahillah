@@ -13,6 +13,9 @@ class osisController extends Controller
         if(session('admin_data') == null){
             return redirect('/login');
         }
+        if(session('config') == null){
+            return redirect('/login');
+        }
         $data = Osis::all();
         return view('templates.admin.osis', compact('data'));
     }
