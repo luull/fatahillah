@@ -106,7 +106,7 @@
     </div>
 </div>
 <!-- Modal edit-->
-<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+<div class="modal fade" id="editModal" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -163,9 +163,9 @@
 </div>
 @endsection
 @section('script')
-<script >
+<script>
     $(document).ready(function(){
-        $(".edit").click(function(){
+        $("#dt-table").on("click", ".edit", function() {
             var idnya=$(this).attr('id').split('-');
             var id=idnya[1];
 
@@ -186,7 +186,7 @@
                     $("#edit_id").val(hsl.id);
                     $("#edit_title").val(hsl.title);
                     $("#edit_category").val(hsl.category);
-                    $("#editModal").modal();
+                    $("#editModal").modal('show');
                    }
                 }
             });

@@ -149,7 +149,7 @@
 @section('script')
 <script >
     $(document).ready(function(){
-        $(".edit").click(function(){
+       $("#dt-table").on("click", ".edit", function() {
             var idnya=$(this).attr('id').split('-');
             var id=idnya[1];
 

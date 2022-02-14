@@ -24,6 +24,8 @@ class loginController extends Controller
             if($check){
                 if (Hash::check($request->password, $check->password)) {
                     session(['admin_data' => $check]);
+                    $config = Configuration::first();
+                    session(['config' => $config]);
                     return redirect('/admin/dashboard');
                 }else{
                     return redirect()->back()->with(['message' => 'Kata sandi salah', 'color' => 'alert-danger']);
