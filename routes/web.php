@@ -28,6 +28,8 @@ Route::post('/admin/updateconfig', 'Admin\configurationController@update')->name
 
 Route::get('/admin/about', 'Admin\aboutController@index');
 Route::post('/admin/updateabout', 'Admin\aboutController@update')->name('update-about');
+Route::get('/admin/file_browse_about', 'Admin\aboutController@file_browse');
+Route::post('/admin/uploadfileabout', 'Admin\aboutController@uploadfile')->name('upload-file-about');
 
 Route::get('/admin/sarana', 'Admin\saranaController@index');
 Route::post('/admin/updatesarana', 'Admin\saranaController@update')->name('update-sarana');
@@ -40,12 +42,16 @@ Route::post('/admin/createevent', 'Admin\eventController@create')->name('create-
 Route::get('/admin/event/delete/{id}', 'Admin\eventController@delete')->name('delete-event');
 Route::get('/admin/event/find/{id}', 'Admin\eventController@find');
 Route::post('/admin/updateevent', 'Admin\eventController@update')->name('update-event');
+Route::get('/admin/file_browse_event', 'Admin\eventController@file_browse');
+Route::post('/admin/uploadfileevent', 'Admin\eventController@uploadfile')->name('upload-file-event');
 
 Route::get('/admin/news', 'Admin\newsController@index');
 Route::post('/admin/createnews', 'Admin\newsController@create')->name('create-news');
 Route::get('/admin/news/delete/{id}', 'Admin\newsController@delete')->name('delete-news');
 Route::get('/admin/news/find/{id}', 'Admin\newsController@find');
 Route::post('/admin/updatenews', 'Admin\newsController@update')->name('update-news');
+Route::get('/admin/file_browse_news', 'Admin\newsController@file_browse');
+Route::post('/admin/uploadfilenews', 'Admin\newsController@uploadfile')->name('upload-file-news');
 
 Route::get('/admin/banner', 'Admin\bannerController@index');
 Route::post('/admin/createbanner', 'Admin\bannerController@create')->name('create-banner');
@@ -92,33 +98,49 @@ Route::post('/admin/createprogram', 'Admin\programController@create')->name('cre
 Route::get('/admin/program/delete/{id}', 'Admin\programController@delete')->name('delete-program');
 Route::get('/admin/program/find/{id}', 'Admin\programController@find');
 Route::post('/admin/updateprogram', 'Admin\programController@update')->name('update-program');
+Route::get('/admin/file_browse_ppdb', 'Admin\ppdbController@file_browse');
+Route::post('/admin/uploadfileppdb', 'Admin\ppdbController@uploadfile')->name('upload-file-ppdb');
 
 Route::get('/admin/curricular', 'Admin\curricularController@index');
 Route::post('/admin/createcurricular', 'Admin\curricularController@create')->name('create-curricular');
 Route::get('/admin/curricular/delete/{id}', 'Admin\curricularController@delete')->name('delete-curricular');
 Route::get('/admin/curricular/find/{id}', 'Admin\curricularController@find');
 Route::post('/admin/updatecurricular', 'Admin\curricularController@update')->name('update-curricular');
+Route::get('/admin/file_browse_curricular', 'Admin\curricularController@file_browse');
+Route::post('/admin/uploadfilecurricular', 'Admin\curricularController@uploadfile')->name('upload-file-curricular');
+
 
 Route::get('/admin/ppdb', 'Admin\ppdbController@index');
 Route::post('/admin/updateppdb', 'Admin\ppdbController@update')->name('update-ppdb');
+Route::get('/admin/file_browse_ppdb', 'Admin\ppdbController@file_browse');
+Route::post('/admin/uploadfileppdb', 'Admin\ppdbController@uploadfile')->name('upload-file-ppdb');
+
 
 Route::get('/admin/osis', 'Admin\osisController@index');
 Route::post('/admin/createosis', 'Admin\osisController@create')->name('create-osis');
 Route::get('/admin/osis/delete/{id}', 'Admin\osisController@delete')->name('delete-osis');
 Route::get('/admin/osis/find/{id}', 'Admin\osisController@find');
 Route::post('/admin/updateosis', 'Admin\osisController@update')->name('update-osis');
+Route::get('/admin/file_browse_osis', 'Admin\osisController@file_browse');
+Route::post('/admin/uploadfileosis', 'Admin\osisController@uploadfile')->name('upload-file-osis');
 
 Route::get('/admin/achievement', 'Admin\achievementController@index');
 Route::post('/admin/createachievement', 'Admin\achievementController@create')->name('create-achievement');
 Route::get('/admin/achievement/delete/{id}', 'Admin\achievementController@delete')->name('delete-achievement');
 Route::get('/admin/achievement/find/{id}', 'Admin\achievementController@find');
 Route::post('/admin/updateachievement', 'Admin\achievementController@update')->name('update-achievement');
+Route::get('/admin/file_browse_achievement', 'Admin\achievementController@file_browse');
+Route::post('/admin/uploadfileachievement', 'Admin\achievementController@uploadfile')->name('upload-file-achievement');
+
 
 Route::get('/admin/curriculum', 'Admin\curriculumController@index');
 Route::post('/admin/createcurriculum', 'Admin\curriculumController@create')->name('create-curriculum');
 Route::get('/admin/curriculum/delete/{id}', 'Admin\curriculumController@delete')->name('delete-curriculum');
 Route::get('/admin/curriculum/find/{id}', 'Admin\curriculumController@find');
 Route::post('/admin/updatecurriculum', 'Admin\curriculumController@update')->name('update-curriculum');
+Route::get('/admin/file_browse_curriculum', 'Admin\curriculumController@file_browse');
+Route::post('/admin/uploadfilecurriculum', 'Admin\curriculumController@uploadfile')->name('upload-file-curriculum');
+
 
 Route::get('/admin/service', 'Admin\serviceController@index');
 Route::get('/admin/service/find/{id}', 'Admin\serviceController@find');

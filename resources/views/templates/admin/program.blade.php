@@ -17,6 +17,32 @@
         @endif
         <div class="widget-content widget-content-area py-4 px-4 br-6">
            <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <hr>
+                    <form action="{{ route('upload-file-program') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Upload</label>
+                                    <span class="text-danger">* batas ukuran 2mb</span>
+                                    <div class="input-group mb-3">
+                                        <input type="file" class="form-control" name="image">
+                                        <div class="input-group-append">
+                                        <button class="btn btn-success" type="submit" id="button-addon2">Upload</button>
+                                        </div>
+                                        @error('image')
+                                        <br>
+                                        <div class="text-danger mt-1">Gambar tidak sesuai dengan ketentuan</div>
+                                        @enderror
+                                    </div>
+
+                                </div>
+                            </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
                <button class="btn btn-primary mb-4" data-toggle="modal" data-target="#addModal">Tambah</button>
                   <table id="dt-table" class="table dt-table-hover" style="width:100%">
                         <thead>
@@ -151,12 +177,12 @@
 </div>
 @endsection
 @section('script')
-<script>
-   var body = document.getElementById("body");
-     CKEDITOR.replace(body,{
-     language:'en-gb'
-   });
-   CKEDITOR.config.allowedContent = false;
+<script type="text/javascript">
+    CKEDITOR.replace('body', {
+        filebrowserUploadUrl: "{{route('ckeditor.upload', ['_token' => csrf_token() ])}}",
+        filebrowserBrowseUrl: "{{asset('/admin/file_browse_program?path=upload/program')}}",
+        filebrowserUploadMethod: 'form'
+    });
 </script>
 <script >
     $(document).ready(function(){

@@ -12,6 +12,31 @@
     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
         <div class="widget-content widget-content-area py-4 px-4 br-6">
            <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <hr>
+                    <form action="{{ route('upload-file-about') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Upload</label>
+                                    <span class="text-danger">* batas ukuran 2mb</span>
+                                    <div class="input-group mb-3">
+                                        <input type="file" class="form-control" name="image">
+                                        <div class="input-group-append">
+                                        <button class="btn btn-success" type="submit" id="button-addon2">Upload</button>
+                                        </div>
+                                        @error('image')
+                                        <br>
+                                        <div class="text-danger mt-1">Gambar tidak sesuai dengan ketentuan</div>
+                                        @enderror
+                                    </div>
+
+                                </div>
+                            </div>
+                    </form>
+                </div>
+            </div>
             <hr>
             <form action="{{ route('update-about') }}" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -80,25 +105,25 @@
 </div>
 @endsection
 @section('script')
-<script>
-   var body = document.getElementById("body");
-     CKEDITOR.replace(body,{
-     language:'en-gb'
-   });
-   CKEDITOR.config.allowedContent = true;
+<script type="text/javascript">
+    CKEDITOR.replace('body', {
+        filebrowserUploadUrl: "{{route('ckeditor.upload', ['_token' => csrf_token() ])}}",
+        filebrowserBrowseUrl: "{{asset('/admin/file_browse_about?path=upload/about')}}",
+        filebrowserUploadMethod: 'form'
+    });
 </script>
-<script>
-   var vission = document.getElementById("vission");
-     CKEDITOR.replace(vission,{
-     language:'en-gb'
-   });
-   CKEDITOR.config.allowedContent = true;
+<script type="text/javascript">
+    CKEDITOR.replace('vission', {
+        filebrowserUploadUrl: "{{route('ckeditor.upload', ['_token' => csrf_token() ])}}",
+        filebrowserBrowseUrl: "{{asset('/admin/file_browse_about?path=upload/about')}}",
+        filebrowserUploadMethod: 'form'
+    });
 </script>
-<script>
-   var mission = document.getElementById("mission");
-     CKEDITOR.replace(mission,{
-     language:'en-gb'
-   });
-   CKEDITOR.config.allowedContent = true;
+<script type="text/javascript">
+    CKEDITOR.replace('mission', {
+        filebrowserUploadUrl: "{{route('ckeditor.upload', ['_token' => csrf_token() ])}}",
+        filebrowserBrowseUrl: "{{asset('/admin/file_browse_about?path=upload/about')}}",
+        filebrowserUploadMethod: 'form'
+    });
 </script>
 @stop

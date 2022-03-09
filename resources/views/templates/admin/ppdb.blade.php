@@ -55,6 +55,32 @@
                         <div class="container">
 
                                     <input type="text" value="{{$data->id}}" name="id" hidden>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <hr>
+                                            <form action="{{ route('upload-file-ppdb') }}" method="POST" enctype="multipart/form-data">
+                                                @csrf
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <label>Upload</label>
+                                                            <span class="text-danger">* batas ukuran 2mb</span>
+                                                            <div class="input-group mb-3">
+                                                                <input type="file" class="form-control" name="image">
+                                                                <div class="input-group-append">
+                                                                <button class="btn btn-success" type="submit" id="button-addon2">Upload</button>
+                                                                </div>
+                                                                @error('image')
+                                                                <br>
+                                                                <div class="text-danger mt-1">Gambar tidak sesuai dengan ketentuan</div>
+                                                                @enderror
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <hr>
                                    <div class="row">
                                        <div class="col-md-12">
                                            <div class="form-group">
@@ -82,11 +108,11 @@
 </div>
 @endsection
 @section('script')
-<script>
-   var body = document.getElementById("body");
-     CKEDITOR.replace(body,{
-     language:'en-gb'
-   });
-   CKEDITOR.config.allowedContent = false;
+<script type="text/javascript">
+    CKEDITOR.replace('body', {
+        filebrowserUploadUrl: "{{route('ckeditor.upload', ['_token' => csrf_token() ])}}",
+        filebrowserBrowseUrl: "{{asset('/admin/file_browse_ppdb?path=upload/ppdb')}}",
+        filebrowserUploadMethod: 'form'
+    });
 </script>
 @stop
